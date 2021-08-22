@@ -8,8 +8,8 @@ const divStyle = {
 
 const HomeComponent = () => (
   <div className={styles.HomeComponent} data-testid="HomeComponent">
-    <div className='card-layout dark huge-text' style={{width: '700px', marginTop: '600px', marginLeft: '20px', position: 'fixed'}}>
-      <h1 style={{textAlign: 'center'}}>Gabriela Glaus - Sopran</h1>
+    <div className='card-layout dark' style={{width: '550px', marginTop: '600px', marginLeft: '20px', position: 'fixed'}}>
+      <h1 style={{textAlign: 'center', fontFamily: 'Allison, cursive', fontSize: '5rem'}}>Gabriela Glaus - Sopran</h1>
     </div> 
     <div>
       {getTestImage(styles.imageFill, divStyle)}

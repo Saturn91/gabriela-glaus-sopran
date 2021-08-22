@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
+
 .HomeComponent {
     background-color: var(--col_back_dark);
 }
