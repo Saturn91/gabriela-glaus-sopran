@@ -11,7 +11,7 @@ const HeaderComponent = () => (
     <Link to="/agenda">Agenda</Link>
     <Link to="/fotos">Fotos</Link>
     <Link to="/audio">Audio</Link>
-    <Link to="/press">Presse Stimmen</Link>
+    <Link to="/press">Pressestimmen</Link>
     <Link to="/repertoire">Repertoire</Link>
     <Link to="/lessons">Unterricht</Link>
     <Link to="/contact">Kontakt</Link>

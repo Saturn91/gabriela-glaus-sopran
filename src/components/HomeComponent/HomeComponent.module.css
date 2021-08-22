@@ -1,1 +1,8 @@
-.HomeComponent {}
+.HomeComponent {
+    background-color: var(--col_back_dark);
+}
+
+.imageFill {
+    margin-left: 500px;
+    margin-bottom: -10px;
+}

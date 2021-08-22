@@ -1,6 +1,6 @@
 .HeaderComponent a{
     padding: 0 40px;
-    color: white;
+    color: var(--col_text_light);
     text-decoration: none;
     height: 50px;
     font-size: 1.5rem;
@@ -8,7 +8,7 @@
 }
 
 .HeaderComponent a:hover{
-    background-color: rgb(24, 24, 24);
+    background-color: var(--col_back_grey_dark);
 }
 
 .HeaderComponent{
@@ -16,5 +16,5 @@
     justify-content: flex-start;
     align-self: center;
     width: 100vv;
-    background-color: rgb(51, 51, 51);
+    background-color: var(--col_back_grey_light);
 }
