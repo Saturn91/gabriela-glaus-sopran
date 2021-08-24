@@ -1,15 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './VitaComponent.module.css';
+import FlowTextContainerComponent from '../FlowTextContainerComponent/FlowTextContainerComponent';
+import { getVita } from '../../services/vita.service';
+import { getHeadShot } from '../../services/image.service';
 
-const VitaComponent = () => (
-  <div className={styles.VitaComponent} data-testid="VitaComponent">
-    VitaComponent Component
+const divStyle = {
+  width: '20vw'
+}
+
+function VitaComponent() {
+
+  return <div className={styles.VitaComponent} data-testid="VitaComponent">
+    <div>
+      {getHeadShot(styles.imageCenter, divStyle)}
+    </div>  
+    <div className={styles.textbox}>
+      <FlowTextContainerComponent flowTexts={getVita()}></FlowTextContainerComponent>
+    </div>    
   </div>
-);
-
-VitaComponent.propTypes = {};
-
-VitaComponent.defaultProps = {};
+}
 
 export default VitaComponent;

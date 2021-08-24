@@ -1,0 +1,4 @@
+.FlowTextContainerComponent {
+    background-color: var(--col_back_dark);
+    color: var(--col_text_light);
+}

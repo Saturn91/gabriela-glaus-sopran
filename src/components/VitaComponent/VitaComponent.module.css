@@ -1,1 +1,20 @@
-.VitaComponent {}
+.VitaComponent {
+    background-color: var(--col_back_dark);
+    color: var(--col_text_light);
+    padding: 20px;
+
+    display: flex;
+    justify-content: end;
+}
+
+.textbox {
+    background-color: var(--col_back_grey_light);
+    border-radius: 20px;
+    text-align: justify;
+    max-width: 50vw;
+    padding: 0 30px;
+}
+
+.imageCenter {
+    margin: 100px;
+}

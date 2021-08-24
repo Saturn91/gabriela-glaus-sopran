@@ -17,13 +17,10 @@
 
 .header {
   grid-area: header;
-  background-color: aqua;
 }
 .main {
   grid-area: main;
-  background-color: yellow;
 }
 .footer {
   grid-area: footer;
-  background-color: red;
 }

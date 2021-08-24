@@ -26,3 +26,8 @@
 .huge-text {
   font-size: 1.75rem;
 }
+
+/*protect images from beeing copied*/
+img {
+  pointer-events: none;
+}
