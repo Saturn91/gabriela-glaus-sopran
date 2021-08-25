@@ -8,7 +8,7 @@ const divStyle = {
 
 const HomeComponent = () => (
   <div className={styles.HomeComponent} data-testid="HomeComponent">
-    <div className='card-layout dark' style={{width: '600px', marginTop: '75vh', marginLeft: '100px', position: 'fixed'}}>
+    <div className='card-layout dark' style={{width: '600px', bottom: '15vh', left: '100px', position: 'fixed'}}>
       <h1 style={{textAlign: 'center', fontFamily: 'Allison, cursive', fontSize: '4rem'}}>Gabriela Glaus - Sopran</h1>
     </div> 
     <div>

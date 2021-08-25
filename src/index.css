@@ -12,8 +12,8 @@
   --col_back_grey_light: rgb(51, 51, 51);
   --col_text_light: white;  
   --col_text_dark: rgb(156, 156, 156);  
-  --col_interaction: rgb(10, 104, 182);
-  --col_interaction_hover:  rgb(26, 65, 97);
+  --col_interaction: rgb(143, 33, 33);
+  --col_interaction_hover:  rgb(80, 21, 21);
 }
 
 .card-layout {
