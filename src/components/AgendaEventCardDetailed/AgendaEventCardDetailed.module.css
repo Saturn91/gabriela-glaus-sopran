@@ -1,0 +1,33 @@
+.AgendaEventCard {
+    border-radius: 10px;
+    color: white;
+    background-color: var(--col_back_grey_light);
+    margin: 20px 0;
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.horizontalElement {
+    display: flex;
+}
+
+.spaceBetween {
+    justify-content: space-between;
+}
+
+.darkText {
+    color: var(--col_text_dark);
+}
+
+.link {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--col_interaction);
+    color: var(--col_text_light);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.link:hover {
+    background-color: var(--col_interaction_hover);
+}
