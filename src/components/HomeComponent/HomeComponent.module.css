@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
 
 .HomeComponent {
-    background-color: var(--col_back_dark);
+    /*background-color: var(--col_back_dark);*/
+    background: rgb(0,0,0);
+    background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
 }
 
 .imageFill {

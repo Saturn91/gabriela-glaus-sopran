@@ -1,14 +1,12 @@
 .FooterComponent {
-    display: flex;
-    justify-content: flex-start;
-    align-self: center;
-    width: 100vv;
-    background-color: var(--col_back_grey_light);
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
 }
 
 .FooterComponent p{
     padding: 0 20px;
-    color: var(--col_text_light);
+    color: var(--col_back_grey_light);
     height: 50px;
     text-decoration: none;
     font-size: 1.5rem;

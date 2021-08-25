@@ -3,7 +3,7 @@ import { getTestImage } from '../../services/image.service';
 import styles from './HomeComponent.module.css';
 
 const divStyle = {
-  height: 'calc(100vh - 100px)'
+  height: 'calc(100vh - 50px)'
 }
 
 const HomeComponent = () => (
