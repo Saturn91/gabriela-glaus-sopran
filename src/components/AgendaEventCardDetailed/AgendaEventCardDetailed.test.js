@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import AgendaEventCard from './AgendaEventCard';
+import AgendaEventCard from './AgendaEventCardDetailed';
 
 describe('<AgendaEventCard />', () => {
   test('it should mount', () => {

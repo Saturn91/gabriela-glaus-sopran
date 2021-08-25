@@ -6,10 +6,10 @@ function AgendaEventCardDetailed(props) {
   return <div className={styles.AgendaEventCard} data-testid="AgendaEventCard">
     <div className={[styles.horizontalElement, styles.spaceBetween].join(' ')}>
       <h2>{props.event.title}</h2>
-      <a href={props.event.info} className={styles.link}>Mehr</a>
+      <a href={props.event.info} className={styles.link}>Details</a>
     </div>
     <div className={[styles.horizontalElement, styles.darkText].join(' ')}>
-      <p style={{marginRight: '20px'}}>{props.event.date.toLocaleDateString(undefined, options)}-{props.event.date.getHours()}:{props.event.date.getMinutes()}</p>
+      <p style={{minWidth: '300px'}}>{props.event.date.toLocaleDateString(undefined, options)}-{props.event.date.getHours()}:{props.event.date.getMinutes()}</p>
       <p style={{fontWeight: 'bold'}}>{props.event.location}</p>
     </div>
     <div className={styles.horizontalElement} style={{marginTop: "20px"}}>
