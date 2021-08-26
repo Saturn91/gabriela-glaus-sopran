@@ -1,10 +1,31 @@
-.VitaComponent {
-    background: rgb(0,0,0);
-    background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
-    color: var(--col_text_light);
-    padding: 20px;
-    display: flex;
-    justify-content: end;
+@media (min-width: 601px) { 
+    .VitaComponent {
+        background: rgb(0,0,0);
+        background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
+        color: var(--col_text_light);
+        padding: 20px;
+        display: flex;
+        justify-content: end;
+        height: calc(100vh - 90px);
+    } 
+    
+    .imageCenter {
+        margin: 100px;
+    }
+}
+
+@media (max-width: 600px) { 
+    .VitaComponent {
+        background: rgb(0,0,0);
+        background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
+        color: var(--col_text_light);
+        padding: 20px;
+        height: calc(100vh - 40px);
+    }    
+
+    .imageCenter {
+        display: none;
+    }
 }
 
 .textbox {
@@ -16,8 +37,4 @@
     overflow-y: auto;
     scrollbar-color: var(--col_back_grey_light) var(--col_back_grey_dark);
     scrollbar-width: thin;
-}
-
-.imageCenter {
-    margin: 100px;
 }
