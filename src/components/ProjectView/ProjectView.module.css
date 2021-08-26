@@ -25,7 +25,6 @@
 }
 
 .list {
-    border-color: var(--col_interaction_hover);
     border-style: solid;
     border-width: 1px;
 
