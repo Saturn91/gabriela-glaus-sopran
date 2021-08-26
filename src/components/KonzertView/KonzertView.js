@@ -13,7 +13,7 @@ function KonzertView() {
 
     return <div className={styles.KonzertView} data-testid="KonzertView">
       <div className={styles.viewSelectorContainer}>
-        <h1 className='title' style={{marginRight: '40px'}}>Konzerte</h1>
+        <h1 className='title'>Konzerte</h1>
         <select name="cars" id="cars" className={styles.selector}>
           <option onClick={() => setDisplayState(displayStates.NEXT)}>nächstes</option>
           <option onClick={() => setDisplayState(displayStates.ACTUAL)}>aktuelle</option>
