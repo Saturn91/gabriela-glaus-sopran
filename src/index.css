@@ -17,16 +17,6 @@
   --col_dark_red:  rgb(31, 11, 11);
 }
 
-.card-layout {
-  border-radius: 5px;
-  padding: 1px 10px;
-}
-
-.dark {
-  color: var(--col_text_light);
-  background-color: var(--col_back_grey_light);
-}
-
 .huge-text {
   font-size: 1.75rem;
 }
