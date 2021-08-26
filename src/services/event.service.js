@@ -1,5 +1,17 @@
 const projects = [
     {
+        title: 'Pupsi Gesang',
+        ensemble: 'Gabriela Glaus',
+        description: 'Eine pupsende Aufführung',
+        info: 'https://img1.gbpicsonline.com/gb/104/057.gif',
+        events: [
+            {
+                date: new Date('2021-07-24T19:30:00'),
+                location: 'Luzern'
+            }           
+        ]
+    },
+    {
         title: 'Das menschliche Antlitz',
         ensemble: 'Collegium Vocale',
         description: 'Das menschliche Anlitz - Das Collegium Vocale singt Musik von Poulenc, Schütz und Schein zum Kriegsende 1648 und 1945.',
@@ -52,6 +64,7 @@ const projects = [
 
 export function getProjects(filter) {
     const datePairs = [];
+    const filteredProjects = [];
 
     projects.forEach(project => {
         let filterfunction = (event) => {
@@ -71,11 +84,19 @@ export function getProjects(filter) {
             }
         } 
 
-        const smallestDate = project.events.filter(filterfunction).sort((a, b) => a.data - b.date)[0].date;
-        datePairs[project.title] = smallestDate;
+        const smallestDateProject = project.events.filter(filterfunction).sort((a, b) => a.data - b.date)[0];
+
+        
+        if(smallestDateProject ) {
+            const smallestDate = smallestDateProject.date;
+            datePairs[project.title] = smallestDate;
+            filteredProjects.push(project);
+        }
+        
+
     })
 
-    return projects.sort((a, b) => datePairs[a.title] - datePairs[b.title]);
+    return filteredProjects.sort((a, b) => datePairs[a.title] - datePairs[b.title]);
 }
 
 export function getCurrentProjects() {

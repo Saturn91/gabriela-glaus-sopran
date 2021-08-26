@@ -4,6 +4,11 @@
     padding: 20px;
     display: flex;
     justify-content: center;
+    overflow-y: auto;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    scrollbar-color: var(--col_back_grey_light) var(--col_back_grey_dark);
+    scrollbar-width: thin;
 }
 
 .spacer {

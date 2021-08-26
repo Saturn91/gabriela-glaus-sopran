@@ -3,7 +3,6 @@
     background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
     color: var(--col_text_light);
     padding: 20px;
-
     display: flex;
     justify-content: end;
 }
@@ -12,8 +11,11 @@
     background-color: var(--col_back_grey_light);
     border-radius: 20px;
     text-align: justify;
-    max-width: 50vw;
+    max-height: calc(100vh - 100px);
     padding: 0 30px;
+    overflow-y: auto;
+    scrollbar-color: var(--col_back_grey_light) var(--col_back_grey_dark);
+    scrollbar-width: thin;
 }
 
 .imageCenter {
