@@ -14,7 +14,9 @@ function KonzertView(props) {
           <option onClick={() => setDisplayState('past')}>vergangene</option>
         </select>
       </div>
-      <KonzertListComponent displayState={display}></KonzertListComponent>      
+      <div className={styles.list}>
+        <KonzertListComponent displayState={display}></KonzertListComponent>
+      </div>      
     </div>
 }
 

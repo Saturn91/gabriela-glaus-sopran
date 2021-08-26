@@ -1,15 +1,24 @@
-.KonzertView {
-
-}
+.KonzertView { }
 
 .viewSelectorContainer {
     display: flex;
-    width: 1000px;
+    max-width: 1000px;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .selector {
     width: 200px;
     font-size: 1.5rem;
     padding: 5px;
+}
+
+.list {
+    background-color:var(--col_dark_red);
+    max-width: 1000px;
+    max-height: 450px;
+    overflow-y: auto;
+    scrollbar-color: var(--col_back_grey_light) var(--col_back_grey_dark);
+    scrollbar-width: thin;
+    border-radius: 10px;
 }

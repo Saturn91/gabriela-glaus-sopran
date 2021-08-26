@@ -14,6 +14,7 @@
   --col_text_dark: rgb(156, 156, 156);  
   --col_interaction: rgb(143, 33, 33);
   --col_interaction_hover:  rgb(80, 21, 21);
+  --col_dark_red:  rgb(31, 11, 11);
 }
 
 .card-layout {
