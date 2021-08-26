@@ -31,3 +31,27 @@
 .link:hover {
     background-color: var(--col_interaction_hover);
 }
+
+@media (max-width: 600px) {
+
+    .AgendaProjectCard {
+        border-radius: 10px;
+        color: white;
+        background-color: var(--col_back_grey_light);
+        margin: 30px 10px;
+        padding: 10px;
+        max-width: 600px;
+    }
+
+    .AgendaProjectCard p {
+        font-size: 0.8rem;
+    }
+
+    .AgendaProjectCard a {
+        font-size: 1.2rem;
+    }
+
+    .AgendaProjectCard h2 {
+        font-size: 1.2rem;
+    }
+}

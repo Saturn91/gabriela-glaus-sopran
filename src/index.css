@@ -26,8 +26,17 @@ img {
   pointer-events: none;
 }
 
-.title {
-  color: var(--col_text_light);
+@media (max-width: 600px) {
+  .title {
+    color: var(--col_text_light);
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 601px) {
+  .title {
+    color: var(--col_text_light);
+  }  
 }
 
 select {

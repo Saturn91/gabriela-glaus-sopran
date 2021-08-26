@@ -7,10 +7,21 @@
     margin-bottom: 20px;
 }
 
-.selector {
-    width: 200px;
-    font-size: 1.5rem;
-    padding: 5px;
+@media (max-width: 600px) {
+    .selector {
+        width: 150px;
+        font-size: 1rem;
+        padding: 5px;
+    }
+}
+
+@media (min-width: 601px) {
+    .selector {
+        width: 200px;
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+    
 }
 
 .list {
