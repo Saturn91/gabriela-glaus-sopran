@@ -9,7 +9,7 @@
 
 .textbox {
     background-color: var(--col_back_grey_light);
-    border-radius: 20px;
+    border-radius: 10px;
     text-align: justify;
     max-height: calc(100vh - 100px);
     padding: 0 30px;

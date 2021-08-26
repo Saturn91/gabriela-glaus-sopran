@@ -104,7 +104,7 @@ export function getCurrentProjects() {
 }
 
 export function getPastProjects() {
-    return getProjects('past');
+    return getProjects('past').reverse();
 }
 
 export function getEvents() {
@@ -137,5 +137,5 @@ export function getCurrentEvents() {
 
 export function getPastEvents() {
     const today = Date.now();
-    return getEvents().filter(event => event.date < today);
+    return getEvents().filter(event => event.date < today).reverse();
 }
