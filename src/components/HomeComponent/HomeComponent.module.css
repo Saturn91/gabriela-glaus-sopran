@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
 
-.HomeComponent {
-    background: rgb(0,0,0);
-    background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
-}
+@media (max-width: 600px) {
+    .HomeComponent {
+        min-height: 100vh;
+        background: rgb(0,0,0);
+        background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
+    }
 
-@media (max-width: 600px) { 
     .imageFill {
-        margin-bottom: -10px;
         width: 100vw;
     }
 
@@ -26,13 +26,17 @@
 }
 
 @media (min-width: 601px) { 
+    .HomeComponent {
+        background: rgb(0,0,0);
+        background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
+    }
+
     .imageContainer {
         display: flex;
         justify-content: center;
     }
 
     .imageFill {
-        margin-bottom: -10px;
         height: calc(100vh - 50px);
     }
 

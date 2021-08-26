@@ -1,7 +1,6 @@
 import React from 'react';
 import { getTestImage } from '../../services/image.service';
 import styles from './HomeComponent.module.css';
-import defaultStyle from '../../index.css';
 
 const HomeComponent = () => (
   <div className={styles.HomeComponent} data-testid="HomeComponent">

@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import styles from './HeaderComponent.module.css';
 import { Link } from "react-router-dom";
 import { RouteDto } from './route';
+import HiddenHeaderComponent from '../HiddenHeaderComponent/HiddenHeaderComponent';
 
-const routes = [
+export const routes = [
   new RouteDto('/', "Home"),
   new RouteDto('/vita', "Vita"),
   new RouteDto('/agenda', "Agenda"),
@@ -14,7 +15,7 @@ const routes = [
   new RouteDto('/contact', "Kontakt")
 ]
 
-function getStyle(route, actualRoute) {
+export function getStyle(route, actualRoute) {
   if(route === actualRoute) return styles.selected
   return styles.notSelected;
 }
@@ -25,7 +26,12 @@ function HeaderComponent() {
 
 
   return <div className={styles.HeaderComponent} data-testid="HeaderComponent">  
-    {routes.map(route => <Link to={route.route} className={getStyle(route.route, actualRoute)} onClick={() => setActualRoute(route.route)}>{route.linkName}</Link>)}
+    <div className={styles.bigHeadder}>
+      {routes.map(route => <Link to={route.route} className={getStyle(route.route, actualRoute)} onClick={() => setActualRoute(route.route)}>{route.linkName}</Link>)}
+    </div>
+    <div className={styles.smallHeader}>
+      <HiddenHeaderComponent actualRoute={actualRoute} setActualRoute={setActualRoute}></HiddenHeaderComponent>
+    </div>
   </div>
 }
 

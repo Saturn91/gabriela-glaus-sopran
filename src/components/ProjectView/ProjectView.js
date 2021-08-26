@@ -13,7 +13,7 @@ function ProjectView() {
   return <div className={styles.ProjectView} data-testid="ProjectView">
     <div className={styles.viewSelectorContainer}>
       <h1 className={['title', styles.spacerTop].join(' ')}>Projekte</h1>
-      <select name="cars" id="cars" className={styles.selector}>
+      <select className={styles.selector}>
         <option onClick={() => setDisplayState(displayStates.ACTUAL)}>aktuelle</option>
         <option onClick={() => setDisplayState(displayStates.PAST)}>vergangene</option>
       </select>

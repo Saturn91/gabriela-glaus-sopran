@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="page-container">
       <BrowserRouter class='main'>
-        <HeaderComponent class='header' />
+        <HeaderComponent/>
         <Route exact path="/vita">
         <VitaComponent/>
         </Route>
