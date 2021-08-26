@@ -1,17 +1,17 @@
 .KonzertView {}
 
-.viewSelectorContainer {
-    display: flex;
-    max-width: 1000px;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
 @media (max-width: 600px) {
     .selector {
         width: 150px;
         font-size: 1rem;
         padding: 5px;
+    }
+
+    .viewSelectorContainer {
+        display: flex;
+        max-width: calc(100vw - 20px);
+        justify-content: space-between;
+        margin-bottom: 20px;
     }
 }
 
@@ -22,6 +22,22 @@
         padding: 5px;
     }
     
+    .viewSelectorContainer {
+        display: flex;
+        max-width: calc(100vw - 20px);
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1000px) {
+    
+    .viewSelectorContainer {
+        display: flex;
+        max-width: 1000px;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
 }
 
 .list {
