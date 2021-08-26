@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './KonzertView.module.css';
 import KonzertListComponent from '../KonzertListComponent/KonzertListComponent';
 
-function KonzertView(props) {
+function KonzertView() {
     const [display, setDisplayState] = useState('next');
 
     return <div className={styles.KonzertView} data-testid="KonzertView">
