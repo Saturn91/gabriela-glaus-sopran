@@ -1,14 +1,13 @@
 import React from 'react';
-import { getCurrentEvents, getCurrentProjects } from '../../services/event.service';
-import AgendaEventCardDetailed from '../AgendaEventCardDetailed/AgendaEventCardDetailed';
+import { getCurrentProjects, getCurrentEvents } from '../../services/event.service';
 import AgendaProjectCard from '../AgendaProjectCard/AgendaProjectCard';
 import styles from './AgendaComponent.module.css';
+import KonzertView from '../KonzertView/KonzertView';
 
 function AgendaComponent(){
   return <div className={styles.AgendaComponent} data-testid="AgendaComponent">
-    <h1 className={styles.title}>Nächstes Konzert</h1>
-    <AgendaEventCardDetailed event={getCurrentEvents()[0]}></AgendaEventCardDetailed>
-    <h1 className={[styles.title, styles.spacerTop].join(' ')}>Aktuelle Projekte</h1>
+    <KonzertView events={getCurrentEvents()}></KonzertView>
+    <h1 className={['title', styles.spacerTop].join(' ')}>Aktuelle Projekte</h1>
     {getCurrentProjects().map(project => 
         <AgendaProjectCard project={project}/>
     )}    

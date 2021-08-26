@@ -73,9 +73,7 @@ export function getProjects(filter) {
 
         const smallestDate = project.events.filter(filterfunction).sort((a, b) => a.data - b.date)[0].date;
         datePairs[project.title] = smallestDate;
-    })   
-    
-    console.log(datePairs);
+    })
 
     return projects.sort((a, b) => datePairs[a.title] - datePairs[b.title]);
 }

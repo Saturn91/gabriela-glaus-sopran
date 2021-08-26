@@ -34,3 +34,25 @@
 img {
   pointer-events: none;
 }
+
+.title {
+  color: var(--col_text_light);
+}
+
+select {
+  text-align: center;
+  background-color: var(--col_back_grey_light);
+  border-color: var(--col_interaction);
+  border-radius: 5px;
+  color: var(--col_text_light);
+}
+
+select:hover {
+  background-color: var(--col_back_grey_dark);
+  border-color: var(--col_interaction_hover);
+}
+
+select:dropdown {
+  background-color: var(--col_back_grey_light);
+  border-color: var(--col_interaction);
+}

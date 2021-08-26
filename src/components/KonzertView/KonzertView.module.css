@@ -1,0 +1,15 @@
+.KonzertView {
+
+}
+
+.viewSelectorContainer {
+    display: flex;
+    width: 1000px;
+    justify-content: space-between;
+}
+
+.selector {
+    width: 200px;
+    font-size: 1.5rem;
+    padding: 5px;
+}
