@@ -1,6 +1,7 @@
 import React from 'react';
 import { getCurrentProjects, getPastProjects } from '../../services/event.service';
 import AgendaProjectCard from '../AgendaProjectCard/AgendaProjectCard';
+import { displayStates } from '../ProjectView/ProjectView';
 
 function ProjectListComponent(props) {
   let actualView;
@@ -8,10 +9,10 @@ function ProjectListComponent(props) {
   let projects = getCurrentProjects();
 
   switch(props.displayState) {
-    case 'actual':
+    case displayStates.ACTUAL:
       actualView = <div> {projects.map(project => <AgendaProjectCard project={project}></AgendaProjectCard>)} </div>
       break;
-    case 'past':
+    case displayStates.PAST:
       projects = getPastProjects();
       actualView = <div> {projects.map(project => <AgendaProjectCard project={project}></AgendaProjectCard>)} </div>
       break;

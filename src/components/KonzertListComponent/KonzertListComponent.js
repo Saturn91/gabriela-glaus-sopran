@@ -1,6 +1,7 @@
 import React from 'react';
 import AgendaEventCardDetailed from '../AgendaEventCardDetailed/AgendaEventCardDetailed';
 import { getCurrentEvents, getPastEvents } from '../../services/event.service';
+import { displayStates } from '../KonzertView/KonzertView';
 
 function KonzertListComponent(props) {
   let actualView;
@@ -8,13 +9,13 @@ function KonzertListComponent(props) {
   let events = getCurrentEvents();
 
   switch(props.displayState) {
-    case 'next':
+    case displayStates.NEXT:
       actualView = <AgendaEventCardDetailed event={events[0]}></AgendaEventCardDetailed>
       break;
-    case 'actual':
+    case displayStates.ACTUAL:
       actualView = <div> {events.map(event => <AgendaEventCardDetailed event={event}></AgendaEventCardDetailed>)} </div>
       break;
-    case 'past':
+    case displayStates.PAST:
       events = getPastEvents();
       actualView = <div> {events.map(event => <AgendaEventCardDetailed event={event}></AgendaEventCardDetailed>)} </div>
       break;
