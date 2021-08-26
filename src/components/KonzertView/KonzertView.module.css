@@ -14,7 +14,10 @@
 }
 
 .list {
-    background-color:var(--col_dark_red);
+    border-color: var(--col_interaction_hover);
+    border-style: solid;
+    border-width: 1px;
+    
     max-width: 1000px;
     max-height: 450px;
     overflow-y: auto;

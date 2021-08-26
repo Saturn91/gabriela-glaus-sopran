@@ -4,11 +4,7 @@
     text-decoration: none;
     height: 50px;
     font-size: 1.5rem;
-    line-height: 50px
-}
-
-.HeaderComponent a:hover{
-    background-color: var(--col_back_grey_dark);
+    line-height: 50px;
 }
 
 .HeaderComponent{
@@ -17,4 +13,20 @@
     align-self: center;
     width: 100vv;
     background-color: var(--col_back_grey_light);
+}
+
+.selected {
+    background-color: var(--col_interaction);
+}
+
+.selected:hover {
+    background-color: var(--col_interaction_hover);
+}
+
+.notSelected {
+    background-color: var(--col_back_grey_light);
+}
+
+.notSelected:hover{
+    background-color: var(--col_back_grey_dark);
 }
