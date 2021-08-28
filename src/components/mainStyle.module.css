@@ -1,20 +1,35 @@
 .componentMainStyle {
     color: var(--col_text_light);
     background: var(--component_background);
-  }
-  
-  @media (max-width: 600px) {
-    .componentMainStyle {
-      padding-top: var(--component_protrait_padding_top);
-      max-height: var(--component_max_heigth_landscape);
-      min-height: var(--component_max_heigth_landscape);
-    }
-  }
+}
 
-  @media (min-width: 601px) { 
+.mainDivHorizontalCenteredChildren {
+    display: flex;
+    justify-content: center;
+}
+
+.mainCenteredInlayDiv {
+    max-width: var(--centered_inlay_width);
+    min-width: var(--centered_inlay_width);
+}
   
+@media (max-width: 600px) {
     .componentMainStyle {
-      max-height: var(--component_max_heigth_landscape);
-      min-height: var(--component_max_heigth_landscape);
+        padding-top: var(--header_height);
+        max-height: var(--component_max_heigth_portrait);
+        min-height: var(--component_max_heigth_portrait);
     }
-  }
+
+    .mainCenteredInlayDiv {
+        max-width: calc(100vw - 20px);
+    }
+}
+
+@media (min-width: 601px) { 
+    .componentMainStyle {
+        padding-top: var(--component_inlay_padding_top);
+        max-height: var(--component_max_heigth_landscape);
+        min-height: var(--component_max_heigth_landscape);
+    }
+}
+

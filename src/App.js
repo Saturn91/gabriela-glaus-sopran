@@ -19,7 +19,7 @@ import FooterComponent from './components/FooterComponent/FooterComponent';
 function App() {
   return (
     <div className="page-container">
-      <BrowserRouter class='main'>
+      <BrowserRouter>
         <HeaderComponent/>
         <Route exact path="/vita">
         <VitaComponent/>

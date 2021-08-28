@@ -1,13 +1,49 @@
+.AgendaComponent {
+    min-height: var(--component_max_heigth_landscape);
+    max-height: var(--component_max_heigth_landscape);
+}
+
+
 @media (max-width: 600px) {
     .AgendaComponent {
-        background: var(--component_background);
+        min-height: var(--component_max_heigth_portrait);
+        max-height: var(--component_max_heigth_portrait);
     }
 }
 
-@media (min-width: 601px) {
-    .AgendaComponent {
-        background: var(--component_background);
-        max-height: var(--component_max_heigth_landscape);
-        min-height: var(--component_max_heigth_landscape);
-    }
+.options {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.options select {
+    width: 200px;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+.options button {
+    width: 200px;
+    font-size: 1.5rem;
+    height: 100%;
+    margin-right: 30px;
+    background-color: var(--transparent);
+    color: var(--col_text_light);
+}
+
+.options button:hover {
+    border-style: none;
+    border-bottom: 2px solid var(--col_interaction_hover);
+}
+
+.active {
+    border-style: none;
+    border-bottom: 2px solid var(--col_interaction);
+}
+
+.inactive {
+    border-style: none;
+    border-bottom: 2px solid var(--transparent);
 }

@@ -16,10 +16,21 @@
   --col_interaction_hover:  rgb(122, 14, 14);
   --col_dark_red:  rgb(31, 11, 11);
   --component_background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
-  --component_protrait_padding_top: 70px;
-  --component_max_heigth_landscape: calc(100vh - var(--component_protrait_padding_top));
-  --component_max_heigth_portrait: calc(100vh - var(--component_protrait_padding_top));
+  --header_height: 70px;
+  --component_inlay_padding_top: 20px;
+  --component_max_heigth_landscape: calc(100vh - var(--header_height) - var(--component_inlay_padding_top));
+  --component_max_heigth_portrait: calc(100vh - var(--header_height));
+  --centered_inlay_width: 60vw;
+  --transparent: rgba(0,0,0,0);
 }
+
+@media (max-width: 600px) {
+  :root {
+    --centered_inlay_width: calc(100vw - 20px);
+  }
+}
+
+
 
 .huge-text {
   font-size: 1.75rem;

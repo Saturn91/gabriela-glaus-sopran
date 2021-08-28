@@ -30,9 +30,9 @@
     padding: 0 40px;
     color: var(--col_text_light);
     text-decoration: none;
-    height: var(--component_protrait_padding_top);
+    height: var(--header_height);
     font-size: 1.5rem;
-    line-height: var(--component_protrait_padding_top);
+    line-height: var(--header_height);
 }
 
 .selected {
