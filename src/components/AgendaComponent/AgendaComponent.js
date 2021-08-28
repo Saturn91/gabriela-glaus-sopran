@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import styles from './AgendaComponent.module.css';
 import mainStyles from '../mainStyle.module.css';
+import { getCurrentEvents, getCurrentProjects, getPastEvents, getPastProjects } from '../../services/event.service';
+import AgendaProjectCard from '../AgendaProjectCard/AgendaProjectCard';
+import AgendaEventCardDetailed from '../AgendaEventCardDetailed/AgendaEventCardDetailed';
 
 const categoryTypes = {
   CONCERTS: 'concerts',
@@ -16,9 +19,34 @@ function getActiveSelectionStyle(actualCategory, ownCategory) {
   return actualCategory === ownCategory ? styles.active : styles.inactive;
 }
 
+function getData(filter1, filter2) {
+  if(filter1 === categoryTypes.CONCERTS) {
+    if(filter2 === subCategoryTypes.ACTUAL) return getCurrentEvents();
+    if(filter2 === subCategoryTypes.PAST) return getPastEvents();
+  }
+  if(filter1 === categoryTypes.PROJECTS) {
+    if(filter2 === subCategoryTypes.ACTUAL) return getCurrentProjects();
+    if(filter2 === subCategoryTypes.PAST) return getPastProjects();
+  }  
+}
+
+function displayCategory(category, subCategory) {
+  let data = getData(category, subCategory);
+
+  if(category === categoryTypes.CONCERTS) {
+    return <div> {data.map(event => <AgendaEventCardDetailed event={event}></AgendaEventCardDetailed>)} </div>
+  }
+
+  if(category === categoryTypes.PROJECTS) {
+    return <div> {data.map(project => <AgendaProjectCard project={project}></AgendaProjectCard>)} </div>
+  }
+}
+
 function AgendaComponent(){
   const [category, setCategoryState] = useState(categoryTypes.CONCERTS);
   const [subCategory, setSubCategoryState] = useState(subCategoryTypes.ACTUAL);
+
+  
 
   return <div className={mainStyles.componentMainStyle} data-testid="AgendaComponent">
     <div className={[mainStyles.mainDivHorizontalCenteredChildren]}>
@@ -34,7 +62,7 @@ function AgendaComponent(){
           </select>
         </div>
         <div>
-        {category}: {subCategory}
+          {displayCategory(category, subCategory)}
         </div>    
       </div>    
     </div>      

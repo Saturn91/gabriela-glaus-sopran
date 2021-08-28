@@ -1,6 +1,9 @@
 .componentMainStyle {
     color: var(--col_text_light);
     background: var(--component_background);
+    overflow-y: auto;
+    scrollbar-color: var(--col_back_grey_light) var(--col_back_grey_dark);
+    scrollbar-width: thin;
 }
 
 .mainDivHorizontalCenteredChildren {
