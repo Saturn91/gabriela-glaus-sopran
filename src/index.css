@@ -15,6 +15,10 @@
   --col_interaction: rgb(143, 33, 33);
   --col_interaction_hover:  rgb(122, 14, 14);
   --col_dark_red:  rgb(31, 11, 11);
+  --component_background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
+  --component_protrait_padding_top: 70px;
+  --component_max_heigth_landscape: calc(100vh - 50px);
+  --component_max_heigth_portrait: calc(100vh - var(--component_protrait_padding_top));
 }
 
 .huge-text {

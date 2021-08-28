@@ -2,9 +2,10 @@
 
 @media (max-width: 600px) {
     .HomeComponent {
-        min-height: 100vh;
+        padding-top: 70px;
+        min-height: var(--component_max_heigth_portrait);
         background: rgb(0,0,0);
-        background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
+        background: var(--component_background);
     }
 
     .imageFill {
@@ -37,7 +38,7 @@
     }
 
     .imageFill {
-        height: calc(100vh - 50px);
+        height: var(--component_max_heigth_landscape);
     }
 
     .banner {
