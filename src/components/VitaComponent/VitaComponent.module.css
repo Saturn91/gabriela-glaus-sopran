@@ -2,7 +2,7 @@
     background-color: var(--col_back_grey_light);
     border-radius: 10px;
     text-align: justify;
-    padding: 0 30px;
+    padding: 0 20px;
     overflow-y: auto;
     scrollbar-color: var(--col_back_grey_light) var(--col_back_grey_dark);
     scrollbar-width: thin;
@@ -10,12 +10,8 @@
 
 @media (min-width: 601px) { 
     .VitaComponent {
-        background: var(--component_background);
-        color: var(--col_text_light);
         display: flex;
         justify-content: end;
-        max-height: var(--component_max_heigth_landscape);
-        min-height: var(--component_max_heigth_landscape);
     } 
     
     .imageCenter {
@@ -23,6 +19,7 @@
     }
 
     .textbox {
+        margin: 20px;
         max-height: calc(100vh - 40px);
     }
 }
@@ -31,15 +28,11 @@
 
 @media (max-width: 600px) { 
     .VitaComponent {
-        padding-top: 70px;
-        background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
-        color: var(--col_text_light);
-        max-height: var(--component_max_heigth_portrait);
-        min-height: var(--component_max_heigth_portrait);
+        display: block
     }
     
     .textbox {
-        max-height: calc(var(--component_max_heigth_portrait) - 40px);
+        max-height: calc(var(--component_max_heigth_portrait) - 60px);
     }
 
     .imageCenter {

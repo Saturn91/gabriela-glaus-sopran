@@ -1,9 +1,10 @@
 import React from 'react';
 import { getTestImage } from '../../services/image.service';
 import styles from './HomeComponent.module.css';
+import mainStyles from '../mainStyle.module.css';
 
 const HomeComponent = () => (
-  <div className={styles.HomeComponent} data-testid="HomeComponent">
+  <div className={mainStyles.componentMainStyle} data-testid="HomeComponent">
     <div className={styles.imageContainer}>
       {getTestImage(styles.imageFill)}
     </div>  

@@ -1,0 +1,20 @@
+.componentMainStyle {
+    color: var(--col_text_light);
+    background: var(--component_background);
+  }
+  
+  @media (max-width: 600px) {
+    .componentMainStyle {
+      padding-top: var(--component_protrait_padding_top);
+      max-height: var(--component_max_heigth_landscape);
+      min-height: var(--component_max_heigth_landscape);
+    }
+  }
+
+  @media (min-width: 601px) { 
+  
+    .componentMainStyle {
+      max-height: var(--component_max_heigth_landscape);
+      min-height: var(--component_max_heigth_landscape);
+    }
+  }

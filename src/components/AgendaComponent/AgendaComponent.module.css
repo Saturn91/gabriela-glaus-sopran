@@ -7,5 +7,7 @@
 @media (min-width: 601px) {
     .AgendaComponent {
         background: var(--component_background);
+        max-height: var(--component_max_heigth_landscape);
+        min-height: var(--component_max_heigth_landscape);
     }
 }
