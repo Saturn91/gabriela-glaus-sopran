@@ -19,9 +19,16 @@
 }
 
 .options select {
+    padding: 5px;
     width: 200px;
     font-size: 1.5rem;
-    padding: 5px;
+}
+
+@media (max-width: 600px) {
+    .options select {
+        width: 120px;
+        font-size: 0.75rem;
+    }
 }
 
 .options button {
@@ -31,6 +38,13 @@
     margin-right: 30px;
     background-color: var(--transparent);
     color: var(--col_text_light);
+}
+
+@media (max-width: 600px) {
+    .options button {
+        width: 120px;
+        font-size: 0.75rem;
+    }
 }
 
 .options button:hover {
