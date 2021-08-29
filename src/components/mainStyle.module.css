@@ -16,7 +16,7 @@
     min-width: var(--centered_inlay_width);
 }
   
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .componentMainStyle {
         padding-top: var(--header_height);
         max-height: var(--component_max_heigth_portrait);
@@ -28,7 +28,7 @@
     }
 }
 
-@media (min-width: 601px) { 
+@media (min-width: 801px) { 
     .componentMainStyle {
         padding-top: var(--component_inlay_padding_top);
         max-height: var(--component_max_heigth_landscape);

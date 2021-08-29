@@ -24,7 +24,9 @@
   --transparent: rgba(0,0,0,0);
 }
 
-@media (max-width: 600px) {
+
+
+@media (max-width: 800px) {
   :root {
     --centered_inlay_width: calc(100vw - 20px);
   }
@@ -41,7 +43,7 @@ img {
   pointer-events: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
   .title {
     color: var(--col_text_light);
@@ -49,7 +51,7 @@ img {
   }
 }
 
-@media (min-width: 601px) {
+@media (min-width: 801px) {
   .title {
     color: var(--col_text_light);
   }

@@ -4,7 +4,7 @@
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .AgendaComponent {
         min-height: var(--component_max_heigth_portrait);
         max-height: var(--component_max_heigth_portrait);
@@ -44,7 +44,7 @@
     align-items: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
     .options {
         height: 35px;
         font-size: 0.75rem;
