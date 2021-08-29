@@ -32,14 +32,21 @@ function getData(filter1, filter2) {
 
 function displayCategory(category, subCategory) {
   let data = getData(category, subCategory);
+  let display;
 
   if(category === categoryTypes.CONCERTS) {
-    return <div> {data.map(event => <AgendaEventCardDetailed event={event}></AgendaEventCardDetailed>)} </div>
+    display = data.map(event => <AgendaEventCardDetailed event={event}></AgendaEventCardDetailed>);
   }
 
   if(category === categoryTypes.PROJECTS) {
-    return <div> {data.map(project => <AgendaProjectCard project={project}></AgendaProjectCard>)} </div>
+    display = data.map(project => <AgendaProjectCard project={project}></AgendaProjectCard>);
   }
+
+  return <div className={styles.listCentered}>
+    <div>
+      {display}
+    </div>    
+  </div>
 }
 
 function AgendaComponent(){
@@ -52,7 +59,7 @@ function AgendaComponent(){
     <div className={[mainStyles.mainDivHorizontalCenteredChildren]}>
       <div className={[mainStyles.mainCenteredInlayDiv, styles.AgendaComponent].join(' ')}>
         <div className={styles.options}>
-          <div>
+          <div className={styles.buttonHolder}>
             <button className={getActiveSelectionStyle(category, categoryTypes.CONCERTS)} onClick={() => setCategoryState(categoryTypes.CONCERTS)}>Konzerte</button>
             <button className={getActiveSelectionStyle(category, categoryTypes.PROJECTS)} onClick={() => setCategoryState(categoryTypes.PROJECTS)}>Projekte</button>
           </div>

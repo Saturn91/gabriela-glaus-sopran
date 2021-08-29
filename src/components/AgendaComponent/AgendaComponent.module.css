@@ -12,6 +12,7 @@
 }
 
 .options {
+    max-width: var(--centered_inlay_width);
     height: 50px;
     display: flex;
     justify-content: space-between;
@@ -24,11 +25,8 @@
     font-size: 1.5rem;
 }
 
-@media (max-width: 600px) {
-    .options select {
-        width: 120px;
-        font-size: 0.75rem;
-    }
+.buttonHolder {
+    display: flex;
 }
 
 .options button {
@@ -40,9 +38,32 @@
     color: var(--col_text_light);
 }
 
+.listCentered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media (max-width: 600px) {
+    .options {
+        height: 35px;
+        font-size: 0.75rem;
+        justify-content: space-between;
+    }
+
+    .options select {
+        width: 45%;
+        font-size: 0.75rem;
+    }
+
+    .buttonHolder {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
     .options button {
-        width: 120px;
+        width: 35%;
         font-size: 0.75rem;
     }
 }
