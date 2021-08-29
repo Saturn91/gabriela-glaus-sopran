@@ -22,6 +22,7 @@
   --component_max_heigth_portrait: calc(100vh - var(--header_height));
   --centered_inlay_width: 60vw;
   --transparent: rgba(0,0,0,0);
+  --transparent-overlay: rgba(0, 0, 0, 0.658);
 }
 
 

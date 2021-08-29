@@ -1,26 +1,24 @@
 .textbox {
-    background-color: var(--col_back_grey_light);
+    background-color: var(--transparent-overlay);
     border-radius: 10px;
     text-align: justify;
     padding: 0 20px;
     overflow-y: auto;
     scrollbar-color: var(--col_back_grey_light) var(--col_back_grey_dark);
     scrollbar-width: thin;
+    max-width: var(--centered_inlay_width);
 }
 
 @media (min-width: 601px) { 
     .VitaComponent {
         display: flex;
-        justify-content: end;
+        justify-content: center;
     } 
-    
-    .imageCenter {
-        margin: 100px;
-    }
 
     .textbox {
         margin: 20px;
         max-height: calc(100vh - 40px);
+        z-index: 2;
     }
 }
 
@@ -34,9 +32,4 @@
     .textbox {
         max-height: calc(var(--component_max_heigth_portrait) - 60px);
     }
-
-    .imageCenter {
-        display: none;
-    }
 }
-

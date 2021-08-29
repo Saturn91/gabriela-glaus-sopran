@@ -1,7 +1,7 @@
 @media (min-width: 801px) {
     .bigHeadder{
         display: flex;
-        justify-content: space-between;
+        justify-content: left;
         align-self: center;
         width: 100vv;
         background-color: var(--col_back_grey_light);
