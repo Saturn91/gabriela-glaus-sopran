@@ -4,6 +4,7 @@
     text-align: justify;
     padding: 0 20px;
     max-width: var(--centered_inlay_width);
+    min-height: var(--component_max_heigth_landscape);
     height: 100%;
 }
 

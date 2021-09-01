@@ -15,6 +15,7 @@
     max-width: var(--centered_inlay_width);
     min-width: var(--centered_inlay_width);
     z-index: 2;
+    min-height: var(--component_max_heigth_landscape);
 }
 
 .componentMainStyle::-webkit-scrollbar {
@@ -38,6 +39,7 @@
 
     .mainCenteredInlayDiv {
         max-width: calc(100vw - 20px);
+        min-height: var(--component_max_heigth_portrait);
     }
 }
 
