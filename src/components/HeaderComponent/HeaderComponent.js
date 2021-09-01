@@ -23,11 +23,9 @@ export function getStyle(route, actualRoute) {
 function HeaderComponent() {
   const [actualRoute, setActualRoute ] = useState('/');
 
-
-
   return <div className={styles.HeaderComponent} data-testid="HeaderComponent">  
     <div className={styles.bigHeadder}>
-      {routes.map(route => <Link to={route.route} className={getStyle(route.route, actualRoute)} onClick={() => setActualRoute(route.route)}>{route.linkName}</Link>)}
+      {routes.map(route => <Link key={route.route} to={route.route} className={getStyle(route.route, actualRoute)} onClick={() => setActualRoute(route.route)}>{route.linkName}</Link>)}
     </div>
     <div className={styles.smallHeader}>
       <HiddenHeaderComponent actualRoute={actualRoute} setActualRoute={setActualRoute}></HiddenHeaderComponent>

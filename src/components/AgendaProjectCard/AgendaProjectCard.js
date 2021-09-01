@@ -14,8 +14,8 @@ function AgendaProjectCard(props) {
 
     <div style={{marginTop: "20px"}}>
       <h3>Aufführungen</h3>
-      {props.project.events.map(event => 
-        <div className={[styles.horizontalElement, styles.darkText].join(' ')}>
+      {props.project.events.map(event =>
+        <div className={[styles.horizontalElement, styles.darkText].join(' ')} key={event.toString() + event.date.toString()}>
           <p style={{minWidth: '300px'}}>{event.date.toLocaleDateString(undefined, options)}-{event.date.getHours()}:{event.date.getMinutes() === 0 ? '00' : event.date.getMinutes()}</p>
           <p style={{fontWeight: 'bold'}}>{event.location}</p>
         </div>      

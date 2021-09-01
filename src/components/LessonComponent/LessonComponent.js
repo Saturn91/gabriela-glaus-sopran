@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './LessonComponent.module.css';
 
 const LessonComponent = () => (
@@ -7,9 +6,5 @@ const LessonComponent = () => (
     LessonComponent Component
   </div>
 );
-
-LessonComponent.propTypes = {};
-
-LessonComponent.defaultProps = {};
 
 export default LessonComponent;

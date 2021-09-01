@@ -35,11 +35,11 @@ function displayCategory(category, subCategory) {
   let display;
 
   if(category === categoryTypes.CONCERTS) {
-    display = data.map(event => <AgendaEventCardDetailed event={event}></AgendaEventCardDetailed>);
+    display = data.map(event => <AgendaEventCardDetailed event={event} key={event.toString()+event.date.toString()}></AgendaEventCardDetailed>);
   }
 
   if(category === categoryTypes.PROJECTS) {
-    display = data.map(project => <AgendaProjectCard project={project}></AgendaProjectCard>);
+    display = data.map(project => <AgendaProjectCard project={project} key={project.toString()+Math.random()}></AgendaProjectCard>);
   }
 
   return <div className={styles.listCentered}>
@@ -63,9 +63,9 @@ function AgendaComponent(){
             <button className={getActiveSelectionStyle(category, categoryTypes.CONCERTS)} onClick={() => setCategoryState(categoryTypes.CONCERTS)}>Konzerte</button>
             <button className={getActiveSelectionStyle(category, categoryTypes.PROJECTS)} onClick={() => setCategoryState(categoryTypes.PROJECTS)}>Projekte</button>
           </div>
-          <select className={styles.selector}>
-            <option onClick={() => setSubCategoryState(subCategoryTypes.ACTUAL)}>aktuelle</option>
-            <option onClick={() => setSubCategoryState(subCategoryTypes.PAST)}>vergangene</option>
+          <select id="subCategorySelector" onChange={() => setSubCategoryState(document.getElementById("subCategorySelector").value)} className={styles.selector}>
+            <option value={subCategoryTypes.ACTUAL}>aktuelle</option>
+            <option value={subCategoryTypes.PAST}>vergangene</option>
           </select>
         </div>
         <div>

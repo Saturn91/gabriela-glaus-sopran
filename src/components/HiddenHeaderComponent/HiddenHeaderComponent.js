@@ -15,7 +15,7 @@ function HiddenHeaderComponent(props) {
     <img src={burgerIcon} className={styles.burgerIcon} alt='burgerItem'></img>
     <div className={showRoutes(showMenu)}>
       {routes.map(route => 
-        <Link to={route.route} 
+        <Link to={route.route} key={route.route} 
           className={[getStyle(route.route, props.actualRoute), styles.option].join(' ')} 
           onClick={() => props.setActualRoute(route.route)}>{route.linkName}</Link>)}
     </div>    
