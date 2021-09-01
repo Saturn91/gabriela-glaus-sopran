@@ -61,4 +61,8 @@
     .backgroundImage {
         width: 100%;
     }
+
+    .hideOnPhones {
+        display: none;
+    }
 }

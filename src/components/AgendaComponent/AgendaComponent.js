@@ -58,7 +58,7 @@ function AgendaComponent(){
 
   return <div className={[mainStyles.componentMainStyle, styles.AgendaComponent].join(' ')} data-testid="AgendaComponent">
     <div className={[mainStyles.mainDivHorizontalCenteredChildren]}>
-      {getVitaImage(mainStyles.backgroundImage)}
+      {getVitaImage([mainStyles.backgroundImage, mainStyles.hideOnPhones].join(' '))}
       <div className={[mainStyles.mainCenteredInlayDiv, styles.AgendaComponent].join(' ')}>
         <div className={styles.options}>
           <div className={styles.buttonHolder}>
