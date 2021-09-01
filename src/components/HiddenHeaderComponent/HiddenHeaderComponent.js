@@ -11,7 +11,7 @@ function showRoutes(showMenu) {
 function HiddenHeaderComponent(props) {
   const [showMenu, toggle] = useState(false);
 
-  return <div className={styles.HiddenHeaderComponent} data-testid="HiddenHeaderComponent" onClick={() => {toggle(!showMenu)}}>
+  return <div data-testid="HiddenHeaderComponent" onClick={() => {toggle(!showMenu)}}>
     <img src={burgerIcon} className={styles.burgerIcon} alt='burgerItem'></img>
     <div className={showRoutes(showMenu)}>
       {routes.map(route => 

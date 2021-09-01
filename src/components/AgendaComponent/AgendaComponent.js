@@ -4,6 +4,7 @@ import mainStyles from '../mainStyle.module.css';
 import { getCurrentEvents, getCurrentProjects, getPastEvents, getPastProjects } from '../../services/event.service';
 import AgendaProjectCard from '../AgendaProjectCard/AgendaProjectCard';
 import AgendaEventCardDetailed from '../AgendaEventCardDetailed/AgendaEventCardDetailed';
+import { getVitaImage } from '../../services/image.service';
 
 const categoryTypes = {
   CONCERTS: 'concerts',
@@ -55,8 +56,9 @@ function AgendaComponent(){
 
   
 
-  return <div className={mainStyles.componentMainStyle} data-testid="AgendaComponent">
+  return <div className={[mainStyles.componentMainStyle, styles.AgendaComponent].join(' ')} data-testid="AgendaComponent">
     <div className={[mainStyles.mainDivHorizontalCenteredChildren]}>
+      {getVitaImage(mainStyles.backgroundImage)}
       <div className={[mainStyles.mainCenteredInlayDiv, styles.AgendaComponent].join(' ')}>
         <div className={styles.options}>
           <div className={styles.buttonHolder}>

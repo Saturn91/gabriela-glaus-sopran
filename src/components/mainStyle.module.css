@@ -14,6 +14,7 @@
 .mainCenteredInlayDiv {
     max-width: var(--centered_inlay_width);
     min-width: var(--centered_inlay_width);
+    z-index: 2;
 }
 
 .componentMainStyle::-webkit-scrollbar {

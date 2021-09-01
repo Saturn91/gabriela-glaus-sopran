@@ -1,17 +1,16 @@
 .AgendaComponent {
-    min-height: var(--component_max_heigth_landscape);
-    max-height: var(--component_max_heigth_landscape);
+    background-color: var(--transparent-overlay);
 }
 
 
 @media (max-width: 800px) {
     .AgendaComponent {
-        min-height: var(--component_max_heigth_portrait);
-        max-height: var(--component_max_heigth_portrait);
+        display: block;
     }
 }
 
 .options {
+    z-index: 1;
     max-width: var(--centered_inlay_width);
     height: 50px;
     display: flex;
@@ -39,6 +38,7 @@
 }
 
 .listCentered {
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;

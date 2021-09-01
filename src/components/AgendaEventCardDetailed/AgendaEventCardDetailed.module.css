@@ -1,7 +1,7 @@
 .AgendaEventCard {
     border-radius: 10px;
     color: white;
-    background-color: var(--col_back_grey_light);
+    background-color: var(--col_back_grey_light_transparent);
     margin: 0 20px;
     margin-bottom: 80px;
     padding: 20px;
