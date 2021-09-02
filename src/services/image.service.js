@@ -7,21 +7,8 @@ const imagePlaceHolderUrls = [
     new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
     new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
     new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" ),
-    new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
-    new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
-    new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" ),
-    new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
-    new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
-    new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" ),
-    new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
-    new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
-    new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" ),
-    new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
-    new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
-    new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" ),
-    new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
-    new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
-    new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" )
+    new ImageDTO("img1","descriptrion1","https://i.postimg.cc/tJhKzc4V/H85-4175.jpg"),
+    new ImageDTO("img2","descriptrion2","https://i.postimg.cc/Dyw66D0k/Harald-Bader-HAROLD-PHOTOGRAPHY-CH-19.jpg" )
 ]
 
 const imageCollections = [
@@ -41,7 +28,7 @@ export function getHeadShot(style, inlineStyle) {
 }
 
 export function getVitaImage(style) {
-    return <img src="https://i.postimg.cc/BvcgjcYN/image-landscape.jpg"  className={style} alt="testImage"></img>
+    return <img src="https://i.postimg.cc/Dyw66D0k/Harald-Bader-HAROLD-PHOTOGRAPHY-CH-19.jpg"  className={style} alt="testImage"></img>
 } 
 
 export function getImageCollections() {

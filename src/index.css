@@ -11,12 +11,13 @@
   --col_back_grey_dark: rgb(24, 24, 24);
   --col_back_grey_light: rgb(51, 51, 51);
   --col_back_grey_light_transparent: rgba(51, 51, 51, 0.897);
+  --col_back_alternative: rgba(0, 0, 0, 0.178);;
   --col_text_light: white;  
   --col_text_dark: rgb(156, 156, 156);  
-  --col_interaction: rgb(143, 33, 33);
-  --col_interaction_hover:  rgb(122, 14, 14);
+  --col_interaction: rgb(9, 97, 109);
+  --col_interaction_hover:  rgb(13, 114, 128);
   --col_dark_red:  rgb(31, 11, 11);
-  --component_background: linear-gradient(75deg, rgba(0,0,0,1) 0%, rgb(24, 24, 24) 100%);
+  --component_background: linear-gradient(75deg, rgb(0, 0, 0) 0%, var(--col_interaction) 100%);
   --header_height: 70px;
   --component_inlay_padding_top: 20px;
   --component_max_heigth_landscape: calc(100vh - var(--header_height) - var(--component_inlay_padding_top));

@@ -11,7 +11,8 @@ export const routes = [
   new RouteDto('/fotos', "Fotos"),
   new RouteDto('/audio', "Audio"),
   new RouteDto('/press', "Pressestimmen"),
-  new RouteDto('/repertoire', "Repetoire"),
+  new RouteDto('/repertoire', "Repertoire"),
+  new RouteDto('/lessons', "Unterricht"),
   new RouteDto('/contact', "Kontakt")
 ]
 

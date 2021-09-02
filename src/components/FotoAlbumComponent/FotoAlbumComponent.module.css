@@ -1,5 +1,4 @@
 .FotoAlbumComponent {
-    background-color: var(--col_back_grey_light_transparent);
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 50px;
@@ -17,6 +16,7 @@
 
 .titleImage {
     max-width: 75vw;
+    border-color: var(--col_back_grey_light);
 }
 
 @media (min-width: 700px) {
@@ -47,4 +47,11 @@
 .previewImageSeclected {
     border-style: solid;
     border-color: var(--col_interaction);
+}
+
+.imageList {
+    padding: 5px 10px;
+    background-color: var(--col_back_alternative);
+    border-style: outset;
+    border-color: rgb(4, 58, 58);
 }

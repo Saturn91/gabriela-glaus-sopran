@@ -34,6 +34,14 @@
     line-height: var(--header_height);
 }
 
+@media (max-width: 800px) {
+    .HeaderComponent a{
+        padding: 0 30px;
+        height: 60px;
+        line-height: 60px
+    }
+}
+
 @media (min-width: 801px) {
     .HeaderComponent a{
         font-size: 0.8rem ;
