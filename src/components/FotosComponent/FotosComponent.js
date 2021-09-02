@@ -12,7 +12,7 @@ function FotosComponent() {
     <div className={[mainStyles.mainDivHorizontalCenteredChildren]}>
       <div className={[mainStyles.mainCenteredInlayDiv, styles.FotosComponent].join(' ')}>
         <div>
-          {imageCollections.map(imageCollection => <FotoAlbumComponent collection={imageCollection}></FotoAlbumComponent>)}          
+          {imageCollections.map(imageCollection => <FotoAlbumComponent collection={imageCollection} key={imageCollection.name}></FotoAlbumComponent>)}
         </div>
       </div>
     </div>

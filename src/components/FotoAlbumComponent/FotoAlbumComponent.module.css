@@ -1,5 +1,50 @@
-.FotoAlbumComponent {}
+.FotoAlbumComponent {
+    background-color: var(--col_back_grey_light_transparent);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.albumTitle {
+    margin-bottom: 40px;
+}
+
+.titleImageContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
 
 .titleImage {
-    width: 20vw;
+    max-width: 75vw;
+}
+
+@media (min-width: 700px) {
+    .titleImage {
+        max-height: 30vw;
+    }
+}
+
+.previewImageContainer {
+    display: block;
+    width: 75px;
+    height: auto;
+    margin: 5px;
+}
+
+.previewImage {
+    width: 100%;
+    vertical-align: middle;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0)
+}
+
+.previewImageContainer:hover .previewImage {
+    border-style: solid;
+    border-color: var(--col_interaction_hover);
+}
+
+.previewImageSeclected {
+    border-style: solid;
+    border-color: var(--col_interaction);
 }

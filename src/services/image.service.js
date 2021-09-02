@@ -1,7 +1,24 @@
-import { ImageCollection } from '../components/models/imageCollection.model';
-import { ImageDTO } from '../components/models/image.model';
+import { ImageCollection } from '../models/imageCollection.model';
+import { ImageDTO } from '../models/image.model';
+
+//images hosted on https://postimages.org/
 
 const imagePlaceHolderUrls = [
+    new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
+    new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
+    new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" ),
+    new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
+    new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
+    new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" ),
+    new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
+    new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
+    new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" ),
+    new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
+    new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
+    new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" ),
+    new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
+    new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
+    new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" ),
     new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
     new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
     new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" )
