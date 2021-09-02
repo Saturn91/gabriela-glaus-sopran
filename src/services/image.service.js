@@ -1,13 +1,10 @@
-import testImage from '../test_images/image1.jpg';
-import headshot from '../test_images/headShot.jpg';
-import vitaImage from '../test_images/image_landscape.jpg';
 import { ImageCollection } from '../components/models/imageCollection.model';
 import { ImageDTO } from '../components/models/image.model';
 
 const imagePlaceHolderUrls = [
-    new ImageDTO("img1","descriptrion1",testImage),
-    new ImageDTO("img2","descriptrion2",headshot),
-    new ImageDTO("img3","descriptrion3",vitaImage)
+    new ImageDTO("img1","descriptrion1","https://i.postimg.cc/W1ZSvP0B/headShot.jpg"),
+    new ImageDTO("img2","descriptrion2","https://i.postimg.cc/B6SCHLR3/image1.jpg"),
+    new ImageDTO("img3","descriptrion3","https://i.postimg.cc/BvcgjcYN/image-landscape.jpg" )
 ]
 
 const imageCollections = [
@@ -19,15 +16,15 @@ const imageCollections = [
 
 
 export function getTestImage(style) {
-    return <img src={testImage} className={style} alt="testImage"></img>
+    return <img src="https://i.postimg.cc/B6SCHLR3/image1.jpg" className={style} alt="testImage"></img>
 }
 
 export function getHeadShot(style, inlineStyle) {
-    return <img src={headshot} className={style} style={inlineStyle} alt="testImage"></img>
+    return <img src="https://i.postimg.cc/W1ZSvP0B/headShot.jpg" className={style} style={inlineStyle} alt="testImage"></img>
 }
 
 export function getVitaImage(style) {
-    return <img src={vitaImage} className={style} alt="testImage"></img>
+    return <img src="https://i.postimg.cc/BvcgjcYN/image-landscape.jpg"  className={style} alt="testImage"></img>
 } 
 
 export function getImageCollections() {
