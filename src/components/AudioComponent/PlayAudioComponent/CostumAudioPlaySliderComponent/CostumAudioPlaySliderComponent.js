@@ -42,19 +42,16 @@ function CostumAudioPlaySliderComponent(audioUrl) {
   const [volume, setVolume] = useState(50);  
   const [endPosition, setEndPosition] = useState(0.1);
   const [actualPosition, setActualPosition] = useState(1);
-  const [allowProgressAutoUpdate, setAllowProgressAutoUpdate] = useState(true);
-
 
   useEffect(() => {
     audio.oncanplaythrough = () => {
       setEndPosition(audio.duration);
       audio.volume = volume / 100;
       setVolume(audio.volume*100);   
-      audio.ontimeupdate = () => {
-        setActualPosition(audio.currentTime / endPosition * 10000);   
-      }
     }    
   });
+
+  useEffect(() => audio.ontimeupdate = () => setActualPosition(audio.currentTime / endPosition * 10000), [endPosition, audio])
 
   return <div className={styles.CostumAudioPlaySliderComponent} data-testid="CostumAudioPlaySliderComponent">
     <img className={styles.icon} src={playBtn} alt='play' onClick={() => playAudio(audio)} style={{pointerEvents: "all"}}></img>
@@ -66,18 +63,25 @@ function CostumAudioPlaySliderComponent(audioUrl) {
           className={styles.slider}
           onInput={() => {
             setActualPosition(document.getElementById(positionSliderID).value);
-            audio.currentTime = actualPosition / 10000 * endPosition;
+            audio.currentTime = (actualPosition-1) / 10000 * endPosition;
           }}
           id={positionSliderID}
           />
     </div>
     <div className={styles.progressDisplay}>
-        <p className={styles.actualPosition}>{formatDuration(actualPosition / 10000 * endPosition)}</p>
+        <p className={styles.actualPosition}>{formatDuration((actualPosition-1) / 10000 * endPosition)}</p>
         <p className={styles.endPosition}>{"/ " +formatDuration(endPosition)}</p>
     </div>
     <img className={styles.icon} src={volumeIcon} alt='volume'/>
     <div className={styles.volumeSliderContainer}>
-        <input type="range" min="1" max="100" value={volume} onInput={() => setVolume(document.getElementById(volumeSliderID).value)} className={styles.volumeSlider} id={volumeSliderID}/>
+        <input type="range" min="1" max="100" value={volume} onInput={() => {
+          setVolume(document.getElementById(volumeSliderID).value);
+          let audioVolume = Math.log(volume/10+1)/Math.log(10);
+          if(audioVolume > 1) audioVolume = 1;
+          audio.volume = audioVolume;
+        }} 
+        className={styles.volumeSlider} 
+        id={volumeSliderID}/>
     </div>  
   </div>
 }
