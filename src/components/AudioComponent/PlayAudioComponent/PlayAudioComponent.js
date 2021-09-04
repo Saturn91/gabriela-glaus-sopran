@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './PlayAudioComponent.module.css';
 import defaultImage from '../../../icons/music.png';
+import CostumAudioPlaySliderComponent from './CostumAudioPlaySliderComponent/CostumAudioPlaySliderComponent';
 
 function getAudioImage(audioDTO) {
-  console.log(audioDTO.image);
   return audioDTO.image ? audioDTO.image : defaultImage; 
 }
 
@@ -14,10 +14,7 @@ function PlayAudioComponent(props) {
       <div className={styles.audioHeaderTextContainer}>
         <p>{props.audio.work} - {props.audio.title}</p>
         <p className={styles.musiciansText}>{props.audio.musicians}</p>
-        <audio controls class={styles.playAudio}>    
-          <source src={props.audio.audioUrl} type="audio/mpeg"/>
-          Your browser does not support the audio element.
-        </audio>
+        <CostumAudioPlaySliderComponent audio={props.audio.audioUrl}></CostumAudioPlaySliderComponent>
       </div>
     </div>    
   </div>;

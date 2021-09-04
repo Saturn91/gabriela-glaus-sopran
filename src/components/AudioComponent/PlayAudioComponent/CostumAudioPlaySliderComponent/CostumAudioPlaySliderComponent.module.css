@@ -1,0 +1,99 @@
+.CostumAudioPlaySliderComponent {
+    display: flex;
+    background-color: grey;
+    align-items: center;
+    height: 50px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin: 0 10px;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #4b4b4b;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4b4b4b;
+    cursor: pointer;
+  }
+
+  .slidercontainer {
+    min-width: calc(100% - 290px);
+    max-width: calc(100% - 290px);
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .progressDisplay {
+      display: flex;
+      align-items: center;
+      min-width: 100px;
+  }
+
+  .progressDisplay .actualPosition {
+      margin-right: 5px;
+      color: white;
+  }
+
+  .icon {
+      height: 30px;
+      margin-left: 10px;
+  }
+
+  .volumeSlider {
+    -webkit-appearance: none;
+    width: 100px;
+    height: 10px;
+    border-radius: 5px;  
+    background: #ffffff;
+    outline: none;
+    margin: 0 10px;
+  }
+  
+  .volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    background: #4b4b4b;
+    cursor: pointer;
+  }
+  
+  .volumeSlider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border-color: #4b4b4b;
+    background: #ffffff;
+    cursor: pointer;
+  }
+
+  .volumeSliderContainer {
+    width: 75%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
