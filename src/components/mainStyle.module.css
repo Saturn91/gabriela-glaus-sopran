@@ -30,7 +30,7 @@
     background-color: var(--col_back_grey_dark);
 }
   
-@media (max-width: 800px) {
+@media (max-width: 915px) {
     .componentMainStyle {
         padding-top: var(--header_height);
         max-height: var(--component_max_heigth_portrait);
@@ -43,7 +43,7 @@
     }
 }
 
-@media (min-width: 801px) { 
+@media (min-width: 915px) { 
     .componentMainStyle {
         padding-top: var(--component_inlay_padding_top);
         max-height: var(--component_max_heigth_landscape);

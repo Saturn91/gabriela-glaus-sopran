@@ -1,4 +1,4 @@
-@media (min-width: 801px) {
+@media (min-width: 915px) {
     .bigHeadder{
         display: flex;
         justify-content: left;
@@ -12,7 +12,7 @@
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 915px) {
     .bigHeadder{
         display: none;
     }
@@ -34,7 +34,7 @@
     line-height: var(--header_height);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 915px) {
     .HeaderComponent a{
         padding: 0 30px;
         height: 60px;
@@ -42,28 +42,28 @@
     }
 }
 
-@media (min-width: 801px) {
+@media (min-width: 915px) {
     .HeaderComponent a{
         font-size: 0.8rem ;
         padding: 0 25px;
     }
 }
 
-@media (min-width: 980px) {
+@media (min-width: 1125px) {
     .HeaderComponent a{
         font-size: 1rem ;
         padding: 0 30px;
     }
 }
 
-@media (min-width: 1150px) {
+@media (min-width: 1325px) {
     .HeaderComponent a{
         font-size: 1.2rem ;
         padding: 0 35px;
     }
 }
 
-@media (min-width: 1380px) {
+@media (min-width: 1590px) {
     .HeaderComponent a{
         font-size: 1.5rem ;
         padding: 0 40px;
