@@ -2,7 +2,7 @@
     display: flex;
     background-color: grey;
     align-items: center;
-    height: 50px;
+    height: 40px;
 }
 
 .slider {
@@ -55,6 +55,11 @@
       margin-right: 5px;
       color: white;
   }
+
+  .progressDisplay .endPosition {
+    margin-right: 5px;
+    color: var(--col_back_grey_dark);
+}
 
   .icon {
       height: 30px;

@@ -37,18 +37,21 @@ function formatDuration(duration) {
 
 function CostumAudioPlaySliderComponent(audioUrl) {
   const volumeSliderID = "volumeSlider_" + audioUrl.audio;
+  const positionSliderID = "positionSlider_" + audioUrl.audio;
   const [audio] = useState(new Audio(audioUrl.audio));
   const [volume, setVolume] = useState(50);  
-  const [endPosition, setEndPosition] = useState(formatDuration(0));
-  const [actualPosition, setActualPosition] = useState(formatDuration(0));
+  const [endPosition, setEndPosition] = useState(0.1);
+  const [actualPosition, setActualPosition] = useState(1);
+  const [allowProgressAutoUpdate, setAllowProgressAutoUpdate] = useState(true);
+
 
   useEffect(() => {
     audio.oncanplaythrough = () => {
-      setEndPosition("/ " + formatDuration(audio.duration));
+      setEndPosition(audio.duration);
       audio.volume = volume / 100;
       setVolume(audio.volume*100);   
       audio.ontimeupdate = () => {
-        setActualPosition(formatDuration(audio.currentTime));
+        setActualPosition(audio.currentTime / endPosition * 10000);   
       }
     }    
   });
@@ -56,11 +59,21 @@ function CostumAudioPlaySliderComponent(audioUrl) {
   return <div className={styles.CostumAudioPlaySliderComponent} data-testid="CostumAudioPlaySliderComponent">
     <img className={styles.icon} src={playBtn} alt='play' onClick={() => playAudio(audio)} style={{pointerEvents: "all"}}></img>
     <div className={styles.slidercontainer}>
-        <input type="range" min="1" max="10000" className={styles.slider} id='audioPositionSlider'/>
+        <input 
+          type="range"
+          min="1" max="10000"
+          value={actualPosition} 
+          className={styles.slider}
+          onInput={() => {
+            setActualPosition(document.getElementById(positionSliderID).value);
+            audio.currentTime = actualPosition / 10000 * endPosition;
+          }}
+          id={positionSliderID}
+          />
     </div>
     <div className={styles.progressDisplay}>
-        <p className={styles.actualPosition}>{actualPosition}</p>
-        <p className={styles.endPosition}>{endPosition}</p>
+        <p className={styles.actualPosition}>{formatDuration(actualPosition / 10000 * endPosition)}</p>
+        <p className={styles.endPosition}>{"/ " +formatDuration(endPosition)}</p>
     </div>
     <img className={styles.icon} src={volumeIcon} alt='volume'/>
     <div className={styles.volumeSliderContainer}>
