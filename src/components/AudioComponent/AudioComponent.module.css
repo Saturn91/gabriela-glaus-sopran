@@ -1,1 +1,4 @@
-.AudioComponent {}
+.AudioComponent {
+    background-color: var(--transparent-overlay);
+    height: 100%
+}

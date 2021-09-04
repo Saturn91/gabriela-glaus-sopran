@@ -1,0 +1,41 @@
+.PlayAudioComponent {
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: var(--col_back_grey_light_transparent);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.playAudio {
+    width: 100%;
+}
+
+.audioImg {
+    display: none;
+}
+
+@media (min-width: 800px) {
+    .audioImg {
+        display: inline-block;
+        height: 80px;
+        background-color: black;
+        padding: 5px;
+    }
+}
+
+
+.audioHeader {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.audioHeaderTextContainer {
+    padding: 0 5px;
+    width: 100%;
+}
+
+.musiciansText {
+    color: var(--col_text_dark);
+}
