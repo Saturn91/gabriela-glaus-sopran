@@ -78,6 +78,7 @@ function CostumAudioPlaySliderComponent(audioUrl) {
           setVolume(document.getElementById(volumeSliderID).value);
           let audioVolume = Math.log(volume/10+1)/Math.log(10);
           if(audioVolume > 1) audioVolume = 1;
+          if(audioVolume < 0.2) audioVolume = 0;
           audio.volume = audioVolume;
         }} 
         className={styles.volumeSlider} 
