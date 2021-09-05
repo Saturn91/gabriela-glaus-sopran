@@ -12,7 +12,7 @@ function PlayAudioComponent(props) {
     <div className={styles.audioHeader}>
       <img className={styles.audioImg} src={getAudioImage(props.audio)} alt='playbarImage'></img>
       <div className={styles.audioHeaderTextContainer}>
-        <p>{props.audio.work} - {props.audio.title}</p>
+        <p className={styles.pieceTitle}>{props.audio.work} - {props.audio.title}</p>
         <p className={styles.musiciansText}>{props.audio.musicians}</p>
         <CostumAudioPlaySliderComponent audio={props.audio.audioUrl}></CostumAudioPlaySliderComponent>
       </div>

@@ -34,4 +34,19 @@
 
 .musiciansText {
     color: var(--col_text_dark);
+    font-size: 0.7rem;
+}
+
+.pieceTitle {
+    font-size: 0.7rem;
+}
+
+@media (min-width: 600px) {
+    .musiciansText {
+        font-size: 1rem;
+    }
+    
+    .pieceTitle {
+        font-size: 1rem;
+    }
 }
