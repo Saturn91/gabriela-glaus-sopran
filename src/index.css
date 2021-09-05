@@ -29,7 +29,7 @@
 
 
 
-@media (max-width: 800px) {
+@media (max-width: 914px) {
   :root {
     --centered_inlay_width: calc(100vw - 20px);
   }

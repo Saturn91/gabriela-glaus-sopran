@@ -30,7 +30,7 @@
     background-color: var(--col_back_grey_dark);
 }
   
-@media (max-width: 915px) {
+@media (max-width: 914px) {
     .componentMainStyle {
         padding-top: var(--header_height);
         max-height: var(--component_max_heigth_portrait);
