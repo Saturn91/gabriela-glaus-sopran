@@ -1,1 +1,69 @@
-.ContactComponent {}
+.ContactComponent {
+    background-color: var(--transparent-overlay);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+@media (max-width: 800px) {
+    .ContactComponent {
+        display: block;
+    }
+}
+
+.emailForm {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+@media (min-width: 600px) {
+    .emailForm {
+        margin: 50px;
+    }
+}
+
+.emailForm * {
+    margin-top: 30px;
+    background-color: var(--col_interaction);
+    color: var(--col_text_light);
+    padding: 10px;
+}
+
+.emailForm input, textarea {
+    border-color: var(--col_interaction_hover);
+    border-radius: 10px;
+}
+
+.buttonHolder {
+    display: block;
+    align-content: center;
+    background-color: var(--transparent);
+    padding: 0;
+}
+
+@media (min-width: 600px) {
+    .buttonHolder {
+        display: flex;
+    }
+}
+
+.buttonHolder button {
+    width: 100%;
+}
+
+
+@media (min-width: 600px) {
+    .buttonHolder button {
+        margin: 0;
+    }
+
+    .buttonHolder .left {
+        margin-right: 10px;
+    } 
+
+    .buttonHolder .right {
+        margin-left: 10px;
+    } 
+}
