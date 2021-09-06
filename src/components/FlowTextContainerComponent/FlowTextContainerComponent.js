@@ -1,5 +1,5 @@
 import React from 'react';
-import FlowTextComponent from '../FlowTextComponent/FlowTextComponent';
+import FlowTextComponent from './FlowTextComponent/FlowTextComponent';
 
 function FlowTextContainerComponent(props) {
     return <div>

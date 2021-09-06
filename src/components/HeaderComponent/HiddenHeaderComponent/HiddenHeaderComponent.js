@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './HiddenHeaderComponent.module.css';
-import burgerIcon from '../../icons/burgerIcon.png';
-import { routes, getStyle } from '../HeaderComponent/HeaderComponent';
+import burgerIcon from '../../../icons/burgerIcon.png';
+import { routes, getStyle } from '../HeaderComponent';
 import { Link } from 'react-router-dom';
 
 function showRoutes(showMenu) {

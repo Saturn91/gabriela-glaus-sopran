@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './HeaderComponent.module.css';
 import { Link } from "react-router-dom";
 import { RouteDto } from './route';
-import HiddenHeaderComponent from '../HiddenHeaderComponent/HiddenHeaderComponent';
+import HiddenHeaderComponent from './HiddenHeaderComponent/HiddenHeaderComponent';
 
 export const routes = [
   new RouteDto('/', "Home"),

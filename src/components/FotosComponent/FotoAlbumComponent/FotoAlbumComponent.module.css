@@ -5,7 +5,8 @@
 }
 
 .albumTitle {
-    margin-bottom: 40px;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
 }
 
 .titleImageContainer {
@@ -51,7 +52,5 @@
 
 .imageList {
     padding: 5px 10px;
-    background-color: var(--col_back_alternative);
-    border-style: outset;
-    border-color: rgb(4, 58, 58);
+    background-color: rgba(0, 0, 0, 0.315);
 }

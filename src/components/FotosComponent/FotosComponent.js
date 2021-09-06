@@ -1,6 +1,6 @@
 import React from 'react';
 import { getImageCollections } from '../../services/image.service';
-import FotoAlbumComponent from '../FotoAlbumComponent/FotoAlbumComponent';
+import FotoAlbumComponent from './FotoAlbumComponent/FotoAlbumComponent';
 import mainStyles from '../mainStyle.module.css';
 import styles from './FotosComponent.module.css';
 
