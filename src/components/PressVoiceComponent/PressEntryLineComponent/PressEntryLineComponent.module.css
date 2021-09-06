@@ -12,5 +12,5 @@
 
 .pressImage {
     max-height: 350px;
-    max-width: var(--component_max_heigth_landscape);
+    max-width: 90%;
 }

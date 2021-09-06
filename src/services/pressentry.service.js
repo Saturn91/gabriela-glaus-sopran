@@ -33,8 +33,9 @@ const pressEntries = [
         new FlowText([
             new FlowTextParagraph(true, "Ein Titel"),
             new FlowTextParagraph(false, 'Erster Paragraph'),
+            new FlowTextParagraph(true, "Ein zweiter Titel"),
             new FlowTextParagraph(false, 'Zweiter Pargraph'),
-            new FlowTextParagraph(false, 'Bild, und Link sind absolut optional'),
+            new FlowTextParagraph(false, 'Bild, und Link sind absolut optional, du kannst entscheiden ob du ein PDF oder einen externen Link unter "mehr" öffnen willst'),
             new FlowTextParagraph(false, 'Geolino: Manuel Geissberger, Autoren Zeile kannst du gestalten wie du möchtest'),
         ]),
         new Date('2021-09-06'),
