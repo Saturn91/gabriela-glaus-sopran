@@ -3,8 +3,8 @@ import FlowTextComponent from './FlowTextComponent/FlowTextComponent';
 
 function FlowTextContainerComponent(props) {
     return <div>
-      {props.flowTexts.map(flowText => (
-        <FlowTextComponent flowText={flowText}></FlowTextComponent>
+      {props.flowText.flowTextParagraphs.map(flowTextParagraph => (
+        <FlowTextComponent flowTextParagraph={flowTextParagraph} key={flowTextParagraph.text}></FlowTextComponent>
       ))}
     </div>
 }

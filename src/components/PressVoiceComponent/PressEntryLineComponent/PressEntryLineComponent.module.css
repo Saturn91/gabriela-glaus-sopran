@@ -1,0 +1,16 @@
+.PressEntryLineComponent {
+    margin: 40px 10px;
+    background-color: var(--col_back_grey_dark);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.imageComponent {
+    display: flex;
+    justify-content: center;
+}
+
+.pressImage {
+    max-height: 350px;
+    max-width: var(--component_max_heigth_landscape);
+}

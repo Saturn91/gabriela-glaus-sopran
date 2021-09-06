@@ -6,11 +6,10 @@ import { getVitaImage } from '../../services/image.service';
 import mainStyles from '../mainStyle.module.css';
 
 function VitaComponent() {
-
   return <div className={[mainStyles.componentMainStyle, styles.VitaComponent].join(' ')} data-testid="VitaComponent"> 
     {getVitaImage(mainStyles.backgroundImage)}
     <div className={styles.textbox}>
-      <FlowTextContainerComponent flowTexts={getVita()}></FlowTextContainerComponent>
+      <FlowTextContainerComponent flowText={getVita()}></FlowTextContainerComponent>
     </div>
   </div>
 }

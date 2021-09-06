@@ -1,1 +1,3 @@
-.PressVoiceComponent {}
+.PressVoiceComponent {
+    background-color: var(--transparent-overlay);
+}

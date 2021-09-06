@@ -1,9 +1,6 @@
 import React from 'react';
 import styles from './SocialMediaComponent.module.css';
-
-function openLink(link) {
-  window.open(link, "_self");
-}
+import { openLink } from '../../services/link.service';
 
 function SocialMediaComponent(props) {
   return <div className={styles.SocialMediaComponent} data-testid="SocialMediaComponent">
