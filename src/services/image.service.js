@@ -17,8 +17,6 @@ const imageCollections = [
     new ImageCollection(imagePlaceHolderUrls, "Porträts")
 ];
 
-
-
 export function getTestImage(style) {
     return <img src="https://i.postimg.cc/B6SCHLR3/image1.jpg" className={style} alt="testImage"></img>
 }
