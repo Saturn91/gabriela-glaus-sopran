@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect, useState } from 'react/cjs/react.development';
 import { formatDate } from '../../../services/date.service';
 import { openLink } from '../../../services/link.service';
 import FlowTextContainerComponent from '../../FlowTextContainerComponent/FlowTextContainerComponent';
@@ -14,16 +13,13 @@ function getLink(link) {
 }
 
 function PressEntryLineComponent(props) {
-  const [link, setLink] = useState(undefined);
-  useEffect(() => setLink(props.pressEntry.link ? props.pressEntry.link : props.pressEntry.pdf), [props.pressEntry]);
-
   return <div className={styles.PressEntryLineComponent} data-testid="PressEntryLineComponent">
     <div className={styles.imageComponent}>
       {getImage(props.pressEntry.image)}
     </div>    
     <p>{formatDate(props.pressEntry.date)}</p>
     <FlowTextContainerComponent flowText={props.pressEntry.flowText}></FlowTextContainerComponent>
-    {getLink(link)}
+    {getLink(props.pressEntry.link ? props.pressEntry.link : props.pressEntry.pdf)}
   </div>
 }
 

@@ -3,7 +3,6 @@ import { FlowTextParagraph } from "../models/flowtext/flowtextparagraph.model";
 import { ImageDTO } from "../models/image.model";
 import { PressEntry } from "../models/pressentry.model";
 import mrChoufleriePDF from "../test_docs/Monsieur-Choufleuri-Oberbaselbieter-Zeitung.pdf";
-import { getImageCollections } from "./image.service";
 
 const pressEntries = [
     new PressEntry(
