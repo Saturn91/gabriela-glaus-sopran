@@ -3,6 +3,8 @@ import styles from './ContactComponent.module.css';
 import mainStyles from '../mainStyle.module.css';
 import { getVitaImage } from '../../services/image.service';
 import { sendEmail } from '../../services/email.service';
+import SocialMediaComponent from '../SocialMediaComponent/SocialMediaComponent';
+import { getSocialMedias } from '../../services/socialmedia.service';
 
 const formId = 'contactForm';
 
@@ -29,7 +31,8 @@ function ContactComponent(){
           <button className={styles.left} type='submit'>Submit</button>
           <button className={styles.right} type='button' onClick={() => clearForm()}>Cancel</button>
         </div>        
-      </form>  
+      </form> 
+      <SocialMediaComponent socialMedias={getSocialMedias()} ></SocialMediaComponent> 
       </div>    
     </div>      
   </div>

@@ -1,0 +1,15 @@
+.SocialMediaComponent {
+    display: flex;
+    padding: 10px;
+}
+
+.icon {
+    height: 50px;
+    margin: 10px;
+    pointer-events: "all";
+}
+
+.icon:hover {
+    height: 70px;
+    margin: 0;
+}
