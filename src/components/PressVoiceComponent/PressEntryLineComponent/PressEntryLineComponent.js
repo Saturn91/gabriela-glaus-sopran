@@ -14,7 +14,7 @@ function getLink(link) {
 }
 
 function PressEntryLineComponent(props) {
-  const [link, setLink] = useState('');
+  const [link, setLink] = useState(undefined);
   useEffect(() => setLink(props.pressEntry.link ? props.pressEntry.link : props.pressEntry.pdf), [props.pressEntry]);
 
   return <div className={styles.PressEntryLineComponent} data-testid="PressEntryLineComponent">
