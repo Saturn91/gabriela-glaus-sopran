@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import styles from './AgendaComponent.module.css';
 import mainStyles from '../mainStyle.module.css';
 import { getCurrentEvents, getCurrentProjects, getPastEvents, getPastProjects } from '../../services/event.service';
-import AgendaProjectCard from '../AgendaProjectCard/AgendaProjectCard';
-import AgendaEventCardDetailed from '../AgendaEventCardDetailed/AgendaEventCardDetailed';
+import AgendaProjectCard from './AgendaProjectCard/AgendaProjectCard';
+import AgendaEventCardDetailed from './AgendaEventCardDetailed/AgendaEventCardDetailed';
 import { getVitaImage } from '../../services/image.service';
 
 const categoryTypes = {

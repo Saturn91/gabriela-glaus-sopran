@@ -76,10 +76,12 @@
 
 .active {
     border-style: none;
+    border-radius: 0;
     border-bottom: 2px solid var(--col_interaction);
 }
 
 .inactive {
     border-style: none;
+    border-radius: 0;
     border-bottom: 2px solid var(--transparent);
 }
