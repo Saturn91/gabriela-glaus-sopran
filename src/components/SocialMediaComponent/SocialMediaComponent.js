@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './SocialMediaComponent.module.css';
 
 function openLink(link) {
-  window.open(link,'_blank');
+  window.open(link, "_self");
 }
 
 function SocialMediaComponent(props) {
