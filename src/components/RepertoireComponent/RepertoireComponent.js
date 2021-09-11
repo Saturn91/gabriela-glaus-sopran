@@ -1,5 +1,5 @@
 import React from 'react';
-import RepertoireEntryComponent from './RepertoireCategoryComponent/RepertoireEntryComponent/RepertoireEntryComponent';
+import RepertoireCategoryComponent from './RepertoireCategoryComponent/RepertoireCategoryComponent';
 import styles from './RepertoireComponent.module.css';
 import { GetRepetoire } from './services/repertoire.service';
 import mainStyles from '../mainStyle.module.css';
@@ -11,7 +11,7 @@ function RepertoireComponent() {
   <div className={[mainStyles.mainDivHorizontalCenteredChildren]}>
     {getVitaImage([mainStyles.backgroundImage, mainStyles.hideOnPhones].join(' '))}
     <div className={[mainStyles.mainCenteredInlayDiv, styles.RepertoireComponent].join(' ')}>
-      <RepertoireEntryComponent repertoireEntry = {repertoireCategories[0].repetoireEntries[0]}></RepertoireEntryComponent>
+        <RepertoireCategoryComponent repertoireCategorie={repertoireCategories[0]}></RepertoireCategoryComponent>
     </div>
   </div>
 </div>;
