@@ -1,21 +1,14 @@
 import React from 'react';
 import RepertoireCategoryComponent from './RepertoireCategoryComponent/RepertoireCategoryComponent';
-import styles from './RepertoireComponent.module.css';
 import { GetRepetoire } from './services/repertoire.service';
-import mainStyles from '../mainStyle.module.css';
-import { getVitaImage } from '../../services/image.service';
+import BaseComponent from '../BaseComponent/BaseComponent';
 
 function RepertoireComponent() {
   const repertoireCategories = GetRepetoire();
-  return <div className={mainStyles.componentMainStyle} data-testid="RepertoireComponent">
-  <div className={[mainStyles.mainDivHorizontalCenteredChildren]}>
-    {getVitaImage([mainStyles.backgroundImage, mainStyles.hideOnPhones].join(' '))}
-    <div className={[mainStyles.mainCenteredInlayDiv, styles.RepertoireComponent].join(' ')}>
-    {repertoireCategories.map(
-      repertoireCategory => <RepertoireCategoryComponent repertoireCategorie={repertoireCategory} key={"RepertoireCategory_"+repertoireCategory.title}></RepertoireCategoryComponent>)} 
-    </div>
-  </div>
-</div>;
+  return <BaseComponent 
+    element={repertoireCategories.map(
+      repertoireCategory => <RepertoireCategoryComponent repertoireCategorie={repertoireCategory} key={"RepertoireCategory_"+repertoireCategory.title}></RepertoireCategoryComponent>)}>
+  </BaseComponent>
 }
 
 export default RepertoireComponent;

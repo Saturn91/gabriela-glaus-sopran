@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './LessonComponent.module.css';
+import BaseComponent from '../BaseComponent/BaseComponent';
 
-const LessonComponent = () => (
-  <div className={styles.LessonComponent} data-testid="LessonComponent">
-    LessonComponent Component
-  </div>
-);
+function LessonComponent() {
+  return <BaseComponent 
+    element={<p>Lesson Component</p>}>
+  </BaseComponent>
+}
 
 export default LessonComponent;
