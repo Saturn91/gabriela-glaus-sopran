@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './ContactComponent.module.css';
-import mainStyles from '../mainStyle.module.css';
-import { getVitaImage } from '../../services/image.service';
+import BaseComponent from '../BaseComponent/BaseComponent';
 import { sendEmail } from '../../services/email.service';
 import SocialMediaComponent from '../SocialMediaComponent/SocialMediaComponent';
 import { getSocialMedias } from '../../services/socialmedia.service';
@@ -19,11 +18,9 @@ function clearForm() {
 }
 
 function ContactComponent(){  
-  return <div className={mainStyles.componentMainStyle} data-testid="ContactComponent">
-    <div className={[mainStyles.mainDivHorizontalCenteredChildren]}>
-      {getVitaImage([mainStyles.backgroundImage, mainStyles.hideOnPhones].join(' '))}
-      <div className={[mainStyles.mainCenteredInlayDiv, styles.ContactComponent].join(' ')}>
-      <form className={styles.emailForm} onSubmit={(onSumbit) => onFormSubmit(onSumbit)} id={formId}>
+  return <BaseComponent element =    
+  { <div>
+    <form className={styles.emailForm} onSubmit={(onSumbit) => onFormSubmit(onSumbit)} id={formId}>
         <input type="Email" placeholder="maximilian.muster@hotmail.com" name='email' required></input>
         <input type="Text" placeholder="Dein Betreff" name='subject' required></input>
         <textarea placeholder="Deine Nachricht" rows="10" name='message' required></textarea>
@@ -32,10 +29,9 @@ function ContactComponent(){
           <button className={styles.right} type='button' onClick={() => clearForm()}>Cancel</button>
         </div>        
       </form> 
-      <SocialMediaComponent socialMedias={getSocialMedias()} ></SocialMediaComponent> 
-      </div>    
-    </div>      
-  </div>
+    <SocialMediaComponent socialMedias={getSocialMedias()} ></SocialMediaComponent> 
+  </div> }>
+  </BaseComponent>
 }
 
 export default ContactComponent;

@@ -1,22 +1,16 @@
 import React from 'react';
 import { getImageCollections } from '../../services/image.service';
 import FotoAlbumComponent from './FotoAlbumComponent/FotoAlbumComponent';
-import mainStyles from '../mainStyle.module.css';
-import styles from './FotosComponent.module.css';
+import BaseComponent from '../BaseComponent/BaseComponent';
 
 
 function FotosComponent() {
   let imageCollections = getImageCollections();
-
-  return <div className={mainStyles.componentMainStyle} data-testid="FotosComponent">
-    <div className={[mainStyles.mainDivHorizontalCenteredChildren]}>
-      <div className={[mainStyles.mainCenteredInlayDiv, styles.FotosComponent].join(' ')}>
-        <div>
-          {imageCollections.map(imageCollection => <FotoAlbumComponent collection={imageCollection} key={imageCollection.name}></FotoAlbumComponent>)}
-        </div>
-      </div>
-    </div>
-  </div>
+  return <BaseComponent 
+    hasBackGroundImage={false} 
+    hasBackground={false}
+    element={imageCollections.map(imageCollection => <FotoAlbumComponent collection={imageCollection} key={imageCollection.name}></FotoAlbumComponent>)}>
+  </BaseComponent>
 };
 
 export default FotosComponent;
