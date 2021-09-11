@@ -2,8 +2,8 @@
     color: var(--col_text_light);
     background: var(--component_background);
     overflow-y: auto;
-    scrollbar-color: var(--col_back_grey_light) var(--col_back_grey_dark);
-    scrollbar-width: thin;
+    scrollbar-color: var(--col_interaction_hover) var(--col_back_grey_dark);
+    /*scrollbar-width: thin;*/
 }
 
 .mainDivHorizontalCenteredChildren {
@@ -19,7 +19,7 @@
 }
 
 .componentMainStyle::-webkit-scrollbar {
-    width: 10px;
+    width: 20px;
     background-color: #F5F5F5;
 }
 .componentMainStyle::-webkit-scrollbar-track {
@@ -27,7 +27,7 @@
     background-color: var(--col_back_grey_light);
 }
 .componentMainStyle::-webkit-scrollbar-thumb {
-    background-color: var(--col_back_grey_dark);
+    background-color: var(--col_interaction_hover);
 }
   
 @media (max-width: 914px) {

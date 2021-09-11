@@ -11,7 +11,8 @@ function RepertoireComponent() {
   <div className={[mainStyles.mainDivHorizontalCenteredChildren]}>
     {getVitaImage([mainStyles.backgroundImage, mainStyles.hideOnPhones].join(' '))}
     <div className={[mainStyles.mainCenteredInlayDiv, styles.RepertoireComponent].join(' ')}>
-        <RepertoireCategoryComponent repertoireCategorie={repertoireCategories[0]}></RepertoireCategoryComponent>
+    {repertoireCategories.map(
+      repertoireCategory => <RepertoireCategoryComponent repertoireCategorie={repertoireCategory} key={"RepertoireCategory_"+repertoireCategory.title}></RepertoireCategoryComponent>)} 
     </div>
   </div>
 </div>;
