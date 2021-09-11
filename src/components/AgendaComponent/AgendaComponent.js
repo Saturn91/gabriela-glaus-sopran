@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import styles from './AgendaComponent.module.css';
-import mainStyles from '../mainStyle.module.css';
 import { getCurrentEvents, getCurrentProjects, getPastEvents, getPastProjects } from '../../services/event.service';
 import AgendaProjectCard from './AgendaProjectCard/AgendaProjectCard';
 import AgendaEventCardDetailed from './AgendaEventCardDetailed/AgendaEventCardDetailed';
-import { getVitaImage } from '../../services/image.service';
+import BaseComponent from '../BaseComponent/BaseComponent';
 
 const categoryTypes = {
   CONCERTS: 'concerts',
@@ -56,11 +55,9 @@ function AgendaComponent(){
 
   
 
-  return <div className={mainStyles.componentMainStyle} data-testid="AgendaComponent">
-    <div className={[mainStyles.mainDivHorizontalCenteredChildren]}>
-      {getVitaImage([mainStyles.backgroundImage, mainStyles.hideOnPhones].join(' '))}
-      <div className={[mainStyles.mainCenteredInlayDiv, styles.AgendaComponent].join(' ')}>
-        <div className={styles.options}>
+  return <BaseComponent element = 
+    {<div>
+      <div className={styles.options}>
           <div className={styles.buttonHolder}>
             <button className={getActiveSelectionStyle(category, categoryTypes.CONCERTS)} onClick={() => setCategoryState(categoryTypes.CONCERTS)}>Konzerte</button>
             <button className={getActiveSelectionStyle(category, categoryTypes.PROJECTS)} onClick={() => setCategoryState(categoryTypes.PROJECTS)}>Projekte</button>
@@ -72,10 +69,9 @@ function AgendaComponent(){
         </div>
         <div>
           {displayCategory(category, subCategory)}
-        </div>    
-      </div>    
-    </div>      
-  </div>
+        </div>
+    </div>}    
+  ></BaseComponent>
 }
 
 export default AgendaComponent;
