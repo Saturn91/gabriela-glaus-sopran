@@ -1,1 +1,3 @@
-.RepertoireComponent {}
+.RepertoireComponent {
+    background-color: var(--transparent-overlay);
+}

@@ -1,0 +1,61 @@
+.RepertoireEntryComponent {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--col_back_grey_light_transparent);
+}
+
+.componist {
+    margin-bottom: 20px;
+}
+
+.componist h2 {
+    font-size: 1rem;
+}
+
+.componist p {
+    font-size: 0.75rem;
+}
+
+.songList {
+    text-align: left;
+    width: 100%;
+}
+
+.songList p{
+    margin-bottom: 20px;
+    font-size: 0.75rem;
+}
+
+@media (min-width: 1500px) {
+    .RepertoireEntryComponent {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .componist {
+        min-width: 25vw;        
+        margin-bottom: 0;
+    }
+
+    .componist h2{
+        font-size: 1.5rem;
+    }
+
+    .componist p {
+        font-size: 1rem;
+    }
+
+    .songList p{
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
