@@ -14,3 +14,7 @@
     max-height: 350px;
     max-width: 90%;
 }
+
+p {
+    margin-left: 10px
+}
