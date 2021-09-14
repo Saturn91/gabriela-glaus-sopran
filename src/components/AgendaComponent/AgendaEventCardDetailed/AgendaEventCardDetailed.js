@@ -8,11 +8,11 @@ function AgendaEventCardDetailed(props) {
       <h2>{props.event.title}</h2>
       <a href={props.event.info} className={styles.link}>Details</a>
     </div>
-    <div className={[styles.horizontalElement, styles.darkText].join(' ')}>
+    <div className={[styles.location, styles.darkText].join(' ')}>
       <p style={{minWidth: '300px'}}>{formatDate(props.event.date, true)}</p>
       <p style={{fontWeight: 'bold'}}>{props.event.location}</p>
     </div>
-    <div className={styles.horizontalElement} style={{marginTop: "20px"}}>
+    <div className={styles.location} style={{marginTop: "20px"}}>
       <p>{props.event.description}</p>
     </div>      
   </div>;
