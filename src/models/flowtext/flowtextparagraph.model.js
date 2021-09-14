@@ -1,6 +1,13 @@
+export const FlowTextType = {
+    TITLE: 1,
+    PARAGRAPH: 2,
+    LINK: 3
+}
+
 export class FlowTextParagraph {
-    constructor(isTitle, text) {
-        this.text = text;
-        this.isTitle = isTitle;
+    constructor(type, text, value) {
+        this.type = type;
+        this.text = text;  
+        this.value = value;      
     }
 }
