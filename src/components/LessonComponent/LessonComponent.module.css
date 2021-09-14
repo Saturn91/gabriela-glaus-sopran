@@ -1,5 +1,16 @@
-.LessonComponent {}
+.LessonComponent {
+    background-color: var(--col_back_grey_light_transparent);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.imgHolder {
+    display: flex;
+    justify-content: center;
+}
 
 .titleImage {
     max-width: 100%;
+    max-height: 30vh;
 }

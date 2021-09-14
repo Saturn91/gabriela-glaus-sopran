@@ -6,13 +6,13 @@ import FlowTextContainerComponent from '../FlowTextContainerComponent/FlowTextCo
 
 function LessonComponent() {
   const lessons = getLessons();
-  console.log(lessons[0].flowText)
-
   return <BaseComponent 
     element=
         {lessons.map(lesson => {
-          return <div>
-          <img src={lesson.image.url} alt={lesson.image.description} className={styles.titleImage}></img>
+          return <div key={"titel: " + lesson.flowText.flowTextParagraphs[0].text} className={styles.LessonComponent}>
+          <div className={styles.imgHolder}>
+            <img src={lesson.image.url} alt={lesson.image.description} className={styles.titleImage}></img>
+          </div>          
           <FlowTextContainerComponent flowText={lesson.flowText}></FlowTextContainerComponent>
           </div>
         })}

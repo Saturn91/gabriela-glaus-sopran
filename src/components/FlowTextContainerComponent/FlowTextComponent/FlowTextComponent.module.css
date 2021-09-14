@@ -15,12 +15,12 @@
 .flowTextLink {
     margin: 10px;
     margin-top: 30px;
-    color: var(--col_interaction);
+    color: var(--col_interaction_hover);
     display: block;
 }
 
 .flowTextLink:hover {
-    color: var(--col_interaction_hover);
+    color: var(--col_interaction);
 }
 
 
