@@ -99,8 +99,6 @@ export function getProjectsFromDB() {
     )
 }
 
-let projects = [];
-
 export function getProjects(projects, filter) {
     const datePairs = [];
     const filteredProjects = [];
