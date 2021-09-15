@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './AgendaComponent.module.css';
-import { getCurrentEvents, getCurrentProjects, getPastEvents, getPastProjects } from '../../services/event.service';
+import { getCurrentEvents, getPastEvents, getProjects, getProjectsFromDB } from '../../services/event.service';
 import AgendaProjectCard from './AgendaProjectCard/AgendaProjectCard';
 import AgendaEventCardDetailed from './AgendaEventCardDetailed/AgendaEventCardDetailed';
 import BaseComponent from '../BaseComponent/BaseComponent';
@@ -19,19 +19,19 @@ function getActiveSelectionStyle(actualCategory, ownCategory) {
   return actualCategory === ownCategory ? styles.active : styles.inactive;
 }
 
-function getData(filter1, filter2) {
+function getData(filter1, filter2, projects) {
   if(filter1 === categoryTypes.CONCERTS) {
-    if(filter2 === subCategoryTypes.ACTUAL) return getCurrentEvents();
-    if(filter2 === subCategoryTypes.PAST) return getPastEvents();
+    if(filter2 === subCategoryTypes.ACTUAL) return getCurrentEvents(projects);
+    if(filter2 === subCategoryTypes.PAST) return getPastEvents(projects);
   }
   if(filter1 === categoryTypes.PROJECTS) {
-    if(filter2 === subCategoryTypes.ACTUAL) return getCurrentProjects();
-    if(filter2 === subCategoryTypes.PAST) return getPastProjects();
+    if(filter2 === subCategoryTypes.ACTUAL) return getProjects(projects, "current");
+    if(filter2 === subCategoryTypes.PAST) return getProjects(projects, "past");
   }  
 }
 
-function displayCategory(category, subCategory) {
-  let data = getData(category, subCategory);
+function displayCategory(category, subCategory, projects) {
+  let data = getData(category, subCategory, projects);
   let display;
 
   if(category === categoryTypes.CONCERTS) {
@@ -50,10 +50,14 @@ function displayCategory(category, subCategory) {
 }
 
 function AgendaComponent(){
+  const [projects, setProjects] = useState([]);
+
   const [category, setCategoryState] = useState(categoryTypes.CONCERTS);
   const [subCategory, setSubCategoryState] = useState(subCategoryTypes.ACTUAL);
 
-  
+  useEffect(() => {
+    if(projects.length === 0) getProjectsFromDB().then((projects) => setProjects(projects));
+  })
 
   return <BaseComponent element = 
     {<div>
@@ -68,7 +72,7 @@ function AgendaComponent(){
           </select>
         </div>
         <div>
-          {displayCategory(category, subCategory)}
+          {displayCategory(category, subCategory, projects)}
         </div>
     </div>}    
   ></BaseComponent>

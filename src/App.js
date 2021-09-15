@@ -15,8 +15,14 @@ import RepertoireComponent from './components/RepertoireComponent/RepertoireComp
 import LessonComponent from './components/LessonComponent/LessonComponent';
 import ContactComponent from './components/ContactComponent/ContactComponent';
 import FooterComponent from './components/FooterComponent/FooterComponent';
+import { testConnection } from './services/firebase-connection.service';
 
 function App() {
+  testConnection((entries) => {
+    if(entries[0].data.field) {
+      entries[0].data.field === "works" ? console.log("connection to server established!"): console.error("connection to server failed!")
+    }
+  });
   return (
     <div className="page-container">
       <BrowserRouter>

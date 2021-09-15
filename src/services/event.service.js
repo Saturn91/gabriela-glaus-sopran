@@ -1,4 +1,6 @@
-const projects = [
+import { getAllDocsFromCollection } from "./firebase-connection.service";
+
+/*const projects = [
     {
         title: 'Pupsi Gesang',
         ensemble: 'Gabriela Glaus',
@@ -59,55 +61,77 @@ const projects = [
             }            
         ]
     }    
-];
+];*/
 
+export function getProjectsFromDB() {
+    return new Promise(
+        (resolve, reject) => {
+            
+            getAllDocsFromCollection("Projects").then((projects) => {
+                let projectsCollection = [];
+                projects.forEach((project, proj_index) => {
+                    let title = project.data.Title;
+                    let ensemble = project.data.ensemble;
+                    let description = project.data.description;
+                    let link = project.data.link;
+                    let events = [];
+                    projectsCollection.push(
+                        {
+                            title: title,
+                            ensemble: ensemble,
+                            description: description,
+                            info: link,
+                            events: events
+                        }
+                    )
+                    getAllDocsFromCollection("/Projects/"+project.id+"/Events").then((events) => {
+                        events.forEach((event, ev_index) => {
+                            projectsCollection[proj_index].events.push({
+                                date: new Date(event.data.date.toDate()),
+                                location: event.data.location
+                            })
+                            if(proj_index+1 === projects.length && ev_index+1 === events.length) resolve(projectsCollection);
+                        })
+                    });
+                });                
+          });        
+        }
+    )
+}
 
-export function getProjects(filter) {
+let projects = [];
+
+export function getProjects(projects, filter) {
     const datePairs = [];
     const filteredProjects = [];
-
     projects.forEach(project => {
         let filterfunction = (event) => {
             return true;
         };
-
         let today = Date.now();
         if(filter === 'current') {
             filterfunction = (event) => {
                 return event.date >= today;
             }
         } 
-
         if(filter === 'past') {
             filterfunction = (event) => {
                 return event.date < today;
             }
         } 
-
         const smallestDateProject = project.events.filter(filterfunction).sort((a, b) => a.data - b.date)[0];
 
-        
         if(smallestDateProject ) {
             const smallestDate = smallestDateProject.date;
             datePairs[project.title] = smallestDate;
             filteredProjects.push(project);
         }
         
-
     })
-
     return filteredProjects.sort((a, b) => datePairs[a.title] - datePairs[b.title]);
 }
 
-export function getCurrentProjects() {
-    return getProjects('current');
-}
-
-export function getPastProjects() {
-    return getProjects('past').reverse();
-}
-
-export function getEvents() {
+export function getEvents(projects) {
     const eventList = [];
 
     projects.forEach(project => {
@@ -130,12 +154,12 @@ export function getEvents() {
     return eventList;
 }
 
-export function getCurrentEvents() {
+export function getCurrentEvents(projects) {
     const today = Date.now();
-    return getEvents().filter(event => event.date >= today);
+    return getEvents(projects).filter(event => event.date >= today);
 }
 
-export function getPastEvents() {
+export function getPastEvents(projects) {
     const today = Date.now();
-    return getEvents().filter(event => event.date < today).reverse();
+    return getEvents(projects).filter(event => event.date < today).reverse();
 }

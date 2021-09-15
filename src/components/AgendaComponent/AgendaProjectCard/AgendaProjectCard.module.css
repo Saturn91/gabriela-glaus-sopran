@@ -5,7 +5,8 @@
     margin: 0 20px;
     margin-bottom: 80px;
     padding: 20px;
-    max-width: var(--centered_inlay_width);
+    min-width: calc(var(--centered_inlay_width) - 60px);
+    max-width: calc(var(--centered_inlay_width) - 60px);
 }
 
 .horizontalElement {
