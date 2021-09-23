@@ -1,0 +1,9 @@
+.EditPopup {
+    position: fixed;
+    top: calc(var(--header_height) + 20px);
+    background-color: white;
+    width: var(--centered_inlay_width);
+    color: black;
+    height: calc(100vh - (calc(var(--header_height) + 20px)));
+    overflow-y: auto;
+}

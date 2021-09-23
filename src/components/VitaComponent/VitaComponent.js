@@ -18,7 +18,10 @@ function VitaComponent(props) {
     element=
     {<div className={styles.textbox}>
       <FlowTextContainerComponent flowText={vitaFlowText}></FlowTextContainerComponent>
-    </div>}>
+    </div>}
+    editElements={
+      <p>Hello</p>
+    }>
   </BaseComponent>
 }
 
