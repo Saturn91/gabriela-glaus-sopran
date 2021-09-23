@@ -8,7 +8,9 @@ export function getVita() {
         getAllDocsFromCollection("vita").then(results => {
           let flowTextParagraphs = [];
           results.sort((a,b) => a.data.textPos - b.data.textPos)
-          results.forEach(result => flowTextParagraphs.push(new FlowTextParagraph(result.data.flowTextParagraphType, result.data.text, result.data.value)))
+          results.forEach(result => {
+            flowTextParagraphs.push(new FlowTextParagraph(result.data.flowTextParagraphType, result.data.text, result.data.value, result.id));
+          })
           resolve(new FlowText(flowTextParagraphs));
         });
       }

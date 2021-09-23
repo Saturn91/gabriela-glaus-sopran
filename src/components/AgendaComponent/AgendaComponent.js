@@ -4,7 +4,7 @@ import { getCurrentEvents, getPastEvents, getProjectsFiltered, getProjectsFromDB
 import AgendaProjectCard from './AgendaProjectCard/AgendaProjectCard';
 import AgendaEventCardDetailed from './AgendaEventCardDetailed/AgendaEventCardDetailed';
 import BaseComponent from '../BaseComponent/BaseComponent';
-import AdminEdit from '../AdminEdit/AdminEdit';
+
 const categoryTypes = {
   CONCERTS: 'concerts',
   PROJECTS: 'projects'

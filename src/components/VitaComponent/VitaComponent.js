@@ -4,6 +4,7 @@ import BaseComponent from '../BaseComponent/BaseComponent';
 import { FlowText } from '../../models/flowtext/flowtext.model';
 import { getVita } from '../../services/vita.service';
 import { useEffect, useState } from 'react';
+import EditFlowTextComponent from '../EditFlowTextComponent/EditFlowTextComponent';
 
 function VitaComponent(props) {
   const [vitaFlowText, setVitaFlowText] = useState(new FlowText([]));
@@ -20,7 +21,7 @@ function VitaComponent(props) {
       <FlowTextContainerComponent flowText={vitaFlowText}></FlowTextContainerComponent>
     </div>}
     editElements={
-      <p>Hello</p>
+      <EditFlowTextComponent flowText={vitaFlowText}></EditFlowTextComponent>
     }>
   </BaseComponent>
 }
