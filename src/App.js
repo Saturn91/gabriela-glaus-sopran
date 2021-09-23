@@ -26,30 +26,23 @@ function App() {
     }
   });
 
-  const UserIsAdmin = (user) => {
-    let loggedInUser = UserIsLoggedIn(user);
-    if(loggedInUser === undefined) return false;
-    if(loggedInUser?.uid == null) return false;
-    return admins.includes(loggedInUser.uid);
-  }
-
-  const UserIsLoggedIn = (user)  => {
-    if(user === undefined) return undefined;
-    return user;
-  }
-
   const [loggedInUser, setUser] = useState(null);
 
   useEffect(() => {
+    const UserIsAdmin = (user) => {
+      if(user === undefined) return false;
+      if(user?.uid == null) return false;
+      return admins.includes(user.uid);
+    }
+
+    const admins = [
+      'wIvn6nVvq6ROQDIrUqYYsIFGhF12',
+    ]
     auth.onAuthStateChanged((user) => {
       if(user) user.isAdmin = UserIsAdmin(user);
       setUser(user);
     });
-  }, []);
-
-  const admins = [
-    'wIvn6nVvq6ROQDIrUqYYsIFGhF12',
-  ]
+  },[]); 
 
   return (
     <div className="page-container">

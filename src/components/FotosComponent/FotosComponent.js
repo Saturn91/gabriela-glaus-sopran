@@ -4,9 +4,10 @@ import FotoAlbumComponent from './FotoAlbumComponent/FotoAlbumComponent';
 import BaseComponent from '../BaseComponent/BaseComponent';
 
 
-function FotosComponent() {
+function FotosComponent(props) {
   let imageCollections = getImageCollections();
   return <BaseComponent 
+    user = {props.user}
     hasBackGroundImage={false} 
     hasBackground={false}
     element={imageCollections.map(imageCollection => <FotoAlbumComponent collection={imageCollection} key={imageCollection.name}></FotoAlbumComponent>)}>

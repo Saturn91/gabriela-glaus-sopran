@@ -3,8 +3,10 @@ import PlayAudioComponent from './PlayAudioComponent/PlayAudioComponent';
 import {getTestAudio} from '../../services/audio.service';
 import BaseComponent from '../BaseComponent/BaseComponent';
 
-function AudioComponent(){
-  return <BaseComponent element =    
+function AudioComponent(props){
+  return <BaseComponent 
+    user = {props.user}
+    element =    
         {getTestAudio().map(audio => <PlayAudioComponent audio={audio} key={audio.title}></PlayAudioComponent>)}>   
   </BaseComponent>
 }

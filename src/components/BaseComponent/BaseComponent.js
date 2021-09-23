@@ -3,6 +3,7 @@ import styles from './BaseComponent.module.css';
 import mainStyles from '../mainStyle.module.css';
 import PropTypes from 'prop-types';
 import { getVitaImage } from '../../services/image.service';
+import AdminEdit from '../AdminEdit/AdminEdit';
 
 function backGroundImageIfSelected(props) {
   if(props.hasBackGroundImage) return getVitaImage([mainStyles.backgroundImage, mainStyles.hideOnPhones].join(' '));
@@ -18,6 +19,7 @@ function BaseComponent(props) {
       {backGroundImageIfSelected(props)}
       <div className={backGroundEnableIfSelected(props)}>
         {props.element}
+        <AdminEdit user={props.user} editMode={() => alert('open edit mode now!')}/>
       </div>
     </div>
   </div>

@@ -3,7 +3,6 @@ import Logout from './Logout/Logout';
 import styles from './LoggedInUserInfo.module.css';
 
 function LoggedInUserInfo(props) {
-  console.log(props.user);
   return <div className={styles.LoggedInUserInfo}>
     <div className={styles.userInfoContainer}>
       {props.user?.photoURL != null ? <img src={props.user.photoURL} className={styles.userIcon} alt=''></img> : ''}

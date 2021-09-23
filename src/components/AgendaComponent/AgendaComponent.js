@@ -4,7 +4,7 @@ import { getCurrentEvents, getPastEvents, getProjectsFiltered, getProjectsFromDB
 import AgendaProjectCard from './AgendaProjectCard/AgendaProjectCard';
 import AgendaEventCardDetailed from './AgendaEventCardDetailed/AgendaEventCardDetailed';
 import BaseComponent from '../BaseComponent/BaseComponent';
-
+import AdminEdit from '../AdminEdit/AdminEdit';
 const categoryTypes = {
   CONCERTS: 'concerts',
   PROJECTS: 'projects'
@@ -49,7 +49,7 @@ function displayCategory(category, subCategory, projects) {
   </div>
 }
 
-function AgendaComponent(){
+function AgendaComponent(props){
   const [projects, setProjects] = useState([]);
 
   const [category, setCategoryState] = useState(categoryTypes.CONCERTS);
@@ -59,7 +59,9 @@ function AgendaComponent(){
     if(projects.length === 0) getProjectsFromDB().then((projects) => setProjects(projects));
   })
 
-  return <BaseComponent element = 
+  return <BaseComponent 
+    user = {props.user}
+    element = 
     {<div>
       <div className={styles.options}>
           <div className={styles.buttonHolder}>
