@@ -1,9 +1,9 @@
 //build with th tutorial: https://github.com/fireship-io/react-firebase-chat
 //offical tutorial: https://firebase.google.com/docs/web/setup?authuser=0#config-object
 
-import firebase from "firebase/app"
-
-import "firebase/auth";
+import * as firebase from "firebase/app"
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import "firebase-auth";
 import "firebase/firestore";
 
 const firebaseConfig = {
@@ -24,21 +24,22 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
   
-export const firebaseApp = firebase.firestore(); 
+export const firebaseAppStore = getFirestore();
 
 export function testConnection(callback) {
     getAllDocsFromCollection('connectionTest').then(callback); 
 }
 
-export function getAllDocsFromCollection(collection) {
+export function getAllDocsFromCollection(collection_id) {
     return new Promise((resolve, reject) => {
-        firebaseApp.collection(collection).get().then((querySnapshot) => {
+        getDocs(collection(firebaseAppStore, collection_id)).then((querySnapshot) => {
             let results = [];
             querySnapshot.forEach(doc => {
                 results.push({id: doc.id, data: doc.data()})
             })
             resolve(results);
-        }) 
-    })
-    
+        });
+    })    
 }
+
+export { firebase };

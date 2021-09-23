@@ -3,7 +3,7 @@ import {
   BrowserRouter,
   Route,
 } from "react-router-dom";
-
+import { useEffect, useState } from 'react';
 import HeaderComponent from './components/HeaderComponent/HeaderComponent';
 import HomeComponent from './components/HomeComponent/HomeComponent';
 import VitaComponent from './components/VitaComponent/VitaComponent';
@@ -15,7 +15,9 @@ import RepertoireComponent from './components/RepertoireComponent/RepertoireComp
 import LessonComponent from './components/LessonComponent/LessonComponent';
 import ContactComponent from './components/ContactComponent/ContactComponent';
 import FooterComponent from './components/FooterComponent/FooterComponent';
+import AdminLogin from './components/AdminLogin/AdminLogin';
 import { testConnection } from './services/firebase-connection.service';
+import { auth } from './components/AdminLogin/LoggedInUserInfo/Login/Login.service';
 
 function App() {
   testConnection((entries) => {
@@ -23,44 +25,74 @@ function App() {
       entries[0].data.field === "works" ? console.log("connection to server established!"): console.error("connection to server failed!")
     }
   });
+
+  const UserIsAdmin = (user) => {
+    let loggedInUser = UserIsLoggedIn(user);
+    if(loggedInUser === undefined) return false;
+    if(loggedInUser?.uid == null) return false;
+    return admins.includes(loggedInUser.uid);
+  }
+
+  const UserIsLoggedIn = (user)  => {
+    if(user === undefined) return undefined;
+    return user;
+  }
+
+  const [loggedInUser, setUser] = useState(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if(user) user.isAdmin = UserIsAdmin(user);
+      setUser(user);
+    });
+  }, []);
+
+  const admins = [
+    'wIvn6nVvq6ROQDIrUqYYsIFGhF12',
+  ]
+
   return (
     <div className="page-container">
       <BrowserRouter>
         <HeaderComponent/>
         <Route exact path="/vita">
-          <VitaComponent/>
+          <VitaComponent user={loggedInUser}/>
         </Route>
 
         <Route exact path="/agenda">
-          <AgendaComponent/>
+          <AgendaComponent user={loggedInUser}/>
         </Route>
 
         <Route exact path="/fotos">
-          <FotoComponent/>
+          <FotoComponent user={loggedInUser}/>
         </Route>
 
         <Route exact path="/audio">
-          <AudioComponent/>
+          <AudioComponent user={loggedInUser}/>
         </Route>
 
         <Route exact path="/press">
-          <PressVoiceComponent/>
+          <PressVoiceComponent user={loggedInUser}/>
         </Route>
 
         <Route exact path="/repertoire">
-          <RepertoireComponent/>
+          <RepertoireComponent user={loggedInUser}/>
         </Route>
 
         <Route exact path="/lessons">
-          <LessonComponent/>
+          <LessonComponent user={loggedInUser}/>
         </Route>
 
         <Route exact path="/contact">
-          <ContactComponent/>
+          <ContactComponent user={loggedInUser}/>
+        </Route>
+
+        <Route exact path="/admin-login">
+          <AdminLogin user={loggedInUser}/>
         </Route>
 
         <Route exact path="/">
-          <HomeComponent/>
+          <HomeComponent user={loggedInUser}/>
         </Route>
 
       </BrowserRouter>
