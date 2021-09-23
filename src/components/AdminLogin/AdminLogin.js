@@ -9,7 +9,7 @@ function AdminLogin(props) {
     hasBackground={false}
     element = 
     {<div className={styles.AdminLogin} data-testid="AdminLogin">
-      {props.user?.isAdmin ?<h1>Welcome Admin</h1>  : <h1>Please Log in if you are a Admin</h1>}
+      {props.user?.isAdmin ?<h1>Welcome Admin</h1>  : <h1>Please Log in if you are an Admin</h1>}
       <LoggedInUserInfo user={props.user}></LoggedInUserInfo>
     </div>}>
   </BaseComponent>

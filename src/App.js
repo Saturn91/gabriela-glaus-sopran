@@ -37,6 +37,7 @@ function App() {
 
     const admins = [
       'wIvn6nVvq6ROQDIrUqYYsIFGhF12',
+      'CrHA7cUo26VXdVtiPoIaeBdZ4jg2'
     ]
     auth.onAuthStateChanged((user) => {
       if(user) user.isAdmin = UserIsAdmin(user);
