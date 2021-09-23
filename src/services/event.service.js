@@ -1,68 +1,5 @@
 import { getAllDocsFromCollection } from "./firebase-connection.service";
 
-/*const projects = [
-    {
-        title: 'Pupsi Gesang',
-        ensemble: 'Gabriela Glaus',
-        description: 'Eine pupsende Aufführung',
-        info: 'https://img1.gbpicsonline.com/gb/104/057.gif',
-        events: [
-            {
-                date: new Date('2021-07-24T19:30:00'),
-                location: 'Luzern'
-            }           
-        ]
-    },
-    {
-        title: 'Das menschliche Antlitz',
-        ensemble: 'Collegium Vocale',
-        description: 'Das menschliche Anlitz - Das Collegium Vocale singt Musik von Poulenc, Schütz und Schein zum Kriegsende 1648 und 1945.',
-        info: 'https://www.gabrielaglaus-sopran.ch/agenda/das-menschliche-antlitz-collegium-vocale/',
-        events: [
-            {
-                date: new Date('2021-08-24T19:30:00'),
-                location: 'Luzern'
-            },
-            {
-                date: new Date('2021-10-16T19:30:00'),
-                location: 'Luzern'
-            },
-            {
-                date: new Date('2021-10-17T17:00:00'),
-                location: 'Bern'
-            },
-            {
-                date: new Date('2021-10-31T19:30:00'),
-                location: 'Zürich'
-            }            
-        ]
-    }, 
-    {
-        title: 'Project 2',
-        ensemble: 'Operadischen',
-        description: 'Das zweite Projekt',
-        info: 'https://www.gabrielaglaus-sopran.ch/agenda/das-menschliche-antlitz-collegium-vocale/',
-        events: [
-            {
-                date: new Date('2021-08-24T19:31:00'),
-                location: 'Luzern'
-            },
-            {
-                date: new Date('2021-10-15T19:30:00'),
-                location: 'Luzern'
-            },
-            {
-                date: new Date('2021-11-17T17:00:00'),
-                location: 'Bern'
-            },
-            {
-                date: new Date('2021-11-30T19:30:00'),
-                location: 'Zürich'
-            }            
-        ]
-    }    
-];*/
-
 export function getProjectsFromDB() {
     return new Promise(
         (resolve, reject) => {
@@ -99,7 +36,7 @@ export function getProjectsFromDB() {
     )
 }
 
-export function getProjects(projects, filter) {
+export function getProjectsFiltered(projects, filter) {
     const datePairs = [];
     const filteredProjects = [];
     projects.forEach(project => {

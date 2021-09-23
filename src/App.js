@@ -28,39 +28,39 @@ function App() {
       <BrowserRouter>
         <HeaderComponent/>
         <Route exact path="/vita">
-        <VitaComponent/>
+          <VitaComponent/>
         </Route>
 
         <Route exact path="/agenda">
-        <AgendaComponent/>
+          <AgendaComponent/>
         </Route>
 
         <Route exact path="/fotos">
-        <FotoComponent/>
+          <FotoComponent/>
         </Route>
 
         <Route exact path="/audio">
-        <AudioComponent/>
+          <AudioComponent/>
         </Route>
 
         <Route exact path="/press">
-        <PressVoiceComponent/>
+          <PressVoiceComponent/>
         </Route>
 
         <Route exact path="/repertoire">
-        <RepertoireComponent/>
+          <RepertoireComponent/>
         </Route>
 
         <Route exact path="/lessons">
-        <LessonComponent/>
+          <LessonComponent/>
         </Route>
 
         <Route exact path="/contact">
-        <ContactComponent/>
+          <ContactComponent/>
         </Route>
 
         <Route exact path="/">
-        <HomeComponent/>
+          <HomeComponent/>
         </Route>
 
       </BrowserRouter>

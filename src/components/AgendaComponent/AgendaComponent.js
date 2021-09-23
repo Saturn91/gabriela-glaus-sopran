@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styles from './AgendaComponent.module.css';
-import { getCurrentEvents, getPastEvents, getProjects, getProjectsFromDB } from '../../services/event.service';
+import { getCurrentEvents, getPastEvents, getProjectsFiltered, getProjectsFromDB } from '../../services/event.service';
 import AgendaProjectCard from './AgendaProjectCard/AgendaProjectCard';
 import AgendaEventCardDetailed from './AgendaEventCardDetailed/AgendaEventCardDetailed';
 import BaseComponent from '../BaseComponent/BaseComponent';
@@ -25,8 +25,8 @@ function getData(filter1, filter2, projects) {
     if(filter2 === subCategoryTypes.PAST) return getPastEvents(projects);
   }
   if(filter1 === categoryTypes.PROJECTS) {
-    if(filter2 === subCategoryTypes.ACTUAL) return getProjects(projects, "current");
-    if(filter2 === subCategoryTypes.PAST) return getProjects(projects, "past");
+    if(filter2 === subCategoryTypes.ACTUAL) return getProjectsFiltered(projects, "current");
+    if(filter2 === subCategoryTypes.PAST) return getProjectsFiltered(projects, "past");
   }  
 }
 
