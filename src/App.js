@@ -17,7 +17,7 @@ import ContactComponent from './components/ContactComponent/ContactComponent';
 import FooterComponent from './components/FooterComponent/FooterComponent';
 import AdminLogin from './components/AdminLogin/AdminLogin';
 import { testConnection } from './services/firebase-connection.service';
-import { auth } from './components/AdminLogin/LoggedInUserInfo/Login/Login.service';
+import { auth, LogOutFromGoogle } from './components/AdminLogin/LoggedInUserInfo/Login/Login.service';
 
 function App() {
   testConnection((entries) => {
@@ -30,17 +30,27 @@ function App() {
 
   useEffect(() => {
     const UserIsAdmin = (user) => {
-      if(user === undefined) return false;
-      if(user?.uid == null) return false;
-      return admins.includes(user.uid);
+      let isAdmin = true;
+      if(user === undefined) isAdmin = false;
+      if(user?.uid == null) isAdmin = false;
+      if(isAdmin) {
+        isAdmin = admins.includes(user.uid);
+        user.isAdmin = isAdmin;
+        if(!isAdmin) {
+          LogOutFromGoogle();
+          return null;
+        }
+      }  
+      return user;
     }
 
+    //there is aswell a settup in the firebase store rule tab which only allows those users to write!
     const admins = [
       'wIvn6nVvq6ROQDIrUqYYsIFGhF12',
       'CrHA7cUo26VXdVtiPoIaeBdZ4jg2'
     ]
     auth.onAuthStateChanged((user) => {
-      if(user) user.isAdmin = UserIsAdmin(user);
+      if(user) UserIsAdmin(user);
       setUser(user);
     });
   },[]); 
