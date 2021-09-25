@@ -53,7 +53,7 @@ function App() {
       if(user) UserIsAdmin(user);
       setUser(user);
     });
-  },[]); 
+  },[]);
 
   return (
     <div className="page-container">

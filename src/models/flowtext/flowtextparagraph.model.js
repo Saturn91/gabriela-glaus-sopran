@@ -5,10 +5,12 @@ export const FlowTextType = {
 }
 
 export class FlowTextParagraph {
-    constructor(type, text, value, databaseUrl) {
+    constructor(textPos, type, text, value, databaseUrl, databaseId) {
+        this.textPos = textPos;
         this.type = type;
         this.text = text;  
         this.value = value;
         this.databaseUrl = databaseUrl;      
+        this.databaseId = databaseId;
     }
 }

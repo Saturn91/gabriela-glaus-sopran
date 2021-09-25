@@ -2,7 +2,7 @@
 //offical tutorial: https://firebase.google.com/docs/web/setup?authuser=0#config-object
 
 import * as firebase from "firebase/app"
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import "firebase-auth";
 import "firebase/firestore";
 
@@ -40,6 +40,16 @@ export function getAllDocsFromCollection(collection_id) {
             resolve(results);
         });
     })    
+}
+
+export function updateFireBaseDoc(collectionUrl, id, object) {
+    return new Promise((resolve, reject) => {
+        const docRef = doc(firebaseAppStore, collectionUrl, id);
+        return updateDoc(docRef, object).then(() => {
+            alert('updated database')
+            resolve();
+        })
+    }) 
 }
 
 export { firebase };
