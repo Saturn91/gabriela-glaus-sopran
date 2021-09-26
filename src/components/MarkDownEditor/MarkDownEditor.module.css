@@ -1,0 +1,48 @@
+.MarkDownEditor {
+
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.MarkDownEditor button{
+    height: 30px;
+}
+
+.MarkDownEditor p {
+    margin: 10px;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.MarkDownEditor h1 {
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+textarea {
+    min-width: var(--centered_inlay_width);
+    max-width: var(--centered_inlay_width);
+    min-height: 50vh;
+}
+
+.preview {
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+@media (min-width: 601px) { 
+    .MarkDownEditor p {
+        font-size: 1.2rem;
+    }
+    
+    .MarkDownEditor h1 {
+        font-size: 1.5rem;
+    }
+}

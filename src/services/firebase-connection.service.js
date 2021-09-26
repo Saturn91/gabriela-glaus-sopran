@@ -5,6 +5,7 @@ import * as firebase from "firebase/app"
 import { getFirestore, collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import "firebase-auth";
 import "firebase/firestore";
+import { getStorage, getDownloadURL, ref, uploadString } from "firebase/storage";
 
 const firebaseConfig = {
 
@@ -50,6 +51,40 @@ export function updateFireBaseDoc(collectionUrl, id, object) {
             resolve();
         })
     }) 
+}
+
+export const firebaseFileStorage = getStorage();
+
+export function getFileFromFirebase(path) {
+    return getDownloadURL(ref(firebaseFileStorage, path));
+}
+
+export function getTextFileFromFirebase(path) {
+    return new Promise((resolve, reject) => {
+        getFileFromFirebase(path).then((url) => {
+            // This can be downloaded directly:
+            const xhr = new XMLHttpRequest();
+            xhr.responseType = 'blob';
+            xhr.onload = (event) => {
+                const blob = xhr.response;
+                blob.text().then((text) => {
+                    resolve(text);
+                })                
+            };
+            xhr.open('GET', url);
+            xhr.send();
+        })
+    }).catch((error) => {
+        console.error(error);
+    })
+}
+
+export function postTextFileOnFireBase(path, text) {
+    const storageRef = ref(firebaseFileStorage, path);
+    uploadString(storageRef, text).then((snapshot) => {
+        alert('storgae updated!');
+      });
+
 }
 
 export { firebase };

@@ -1,28 +1,25 @@
 import styles from './VitaComponent.module.css';
-import FlowTextContainerComponent from '../FlowTextContainerComponent/FlowTextContainerComponent';
 import BaseComponent from '../BaseComponent/BaseComponent';
-import { FlowText } from '../../models/flowtext/flowtext.model';
 import { getVita } from '../../services/vita.service';
 import { useEffect, useState } from 'react';
-import EditFlowTextComponent from '../EditFlowTextComponent/EditFlowTextComponent';
+import MarkDownEditor from '../MarkDownEditor/MarkDownEditor';
+import { MarkDown } from '../../models/markdown-dto.model';
+
+const loadingCode = `
+  <h1>Gabriela Glaus - Sopran</h1>
+  <p>...</p>
+`;
 
 function VitaComponent(props) {
-  const [vitaFlowText, setVitaFlowText] = useState(new FlowText([]));
-  useEffect(() => {
-    if(vitaFlowText.flowTextParagraphs.length <= 0) {
-      getVita().then((flowText) => setVitaFlowText(flowText));
-    }    
-  });
+  const [vitaMarkDown, setVitaMarkDown] = useState(new MarkDown('',loadingCode,''));
+  useEffect(() => {    
+    getVita().then((markdown) => setVitaMarkDown(markdown));
+  }, []);
 
   return <BaseComponent 
     user = {props.user}
-    element=
-    {<div className={styles.textbox}>
-      <FlowTextContainerComponent flowText={vitaFlowText}></FlowTextContainerComponent>
-    </div>}
-    editElements={
-      <EditFlowTextComponent flowText={vitaFlowText}></EditFlowTextComponent>
-    }>
+    element={<div className={styles.textbox} dangerouslySetInnerHTML={{ __html: vitaMarkDown.render }}></div>}
+    editElements={<MarkDownEditor markDown = {vitaMarkDown}></MarkDownEditor>}>
   </BaseComponent>
 }
 

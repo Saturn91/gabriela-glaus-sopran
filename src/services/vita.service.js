@@ -1,5 +1,5 @@
-import { getFlowTextFromFirebase } from "./firebase-flowtext-service";
+import { GetMarkdownFile } from "./firebase-markdown.service";
 
 export function getVita() {
-    return getFlowTextFromFirebase('vita');
+    return GetMarkdownFile('vita.md');
 }
