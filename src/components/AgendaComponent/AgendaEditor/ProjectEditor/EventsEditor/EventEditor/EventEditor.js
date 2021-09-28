@@ -1,6 +1,6 @@
-import React from 'react';
+import React  from 'react';
+import { useState } from 'react';
 import styles from './EventEditor.module.css';
-import { useState } from 'react/cjs/react.development';
 import mainStyle from '../../../../../mainStyle.module.css';
 
 function EventEditor(props){
