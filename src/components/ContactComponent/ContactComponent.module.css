@@ -36,6 +36,11 @@
     border-radius: 10px;
 }
 
+.emailForm textarea {
+    min-width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+}
+
 .buttonHolder {
     display: block;
     align-content: center;

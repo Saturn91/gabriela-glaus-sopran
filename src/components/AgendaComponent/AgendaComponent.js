@@ -4,6 +4,7 @@ import { getCurrentEvents, getPastEvents, getProjectsFiltered, getProjectsFromDB
 import AgendaProjectCard from './AgendaProjectCard/AgendaProjectCard';
 import AgendaEventCardDetailed from './AgendaEventCardDetailed/AgendaEventCardDetailed';
 import BaseComponent from '../BaseComponent/BaseComponent';
+import AgendaEditor from './AgendaEditor/AgendaEditor';
 
 const categoryTypes = {
   CONCERTS: 'concerts',
@@ -76,8 +77,9 @@ function AgendaComponent(props){
         <div>
           {displayCategory(category, subCategory, projects)}
         </div>
-    </div>}    
-  ></BaseComponent>
+    </div>} 
+    editElements={<AgendaEditor projects={projects}></AgendaEditor>}>   
+  </BaseComponent>
 }
 
 export default AgendaComponent;

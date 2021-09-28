@@ -1,0 +1,30 @@
+.EventEditor {
+    margin-bottom: 40px;
+}
+
+.EventHolder {
+    border-top: var(--col_interaction) solid;
+    padding-top: 10px;
+}
+
+.EventHolder button{
+    margin-bottom: 10px;
+    width: 80%;
+    margin-left: 19.5%;
+}
+
+.lineProperty {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.lineProperty .locationInput {
+    padding: 10px;
+    width: calc(80% - 20px);
+}
+
+.lineProperty .dateInput {
+    padding: 10px;
+    width: calc(80% - 20px);
+}

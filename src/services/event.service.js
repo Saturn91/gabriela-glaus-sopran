@@ -37,33 +37,53 @@ export function getProjectsFromDB() {
 }
 
 export function getProjectsFiltered(projects, filter) {
-    const datePairs = [];
     const filteredProjects = [];
+
+    let filterfunction = (event) => {
+        return true;
+    };
+    let today = Date.now();
+    if(filter === 'current') {
+        filterfunction = (event) => {
+            return event.date >= today;
+        }
+    } 
+    if(filter === 'past') {
+        filterfunction = (event) => {
+            return event.date < today;
+        }
+    } 
+    
     projects.forEach(project => {
-        let filterfunction = (event) => {
-            return true;
-        };
-        let today = Date.now();
-        if(filter === 'current') {
-            filterfunction = (event) => {
-                return event.date >= today;
-            }
-        } 
-        if(filter === 'past') {
-            filterfunction = (event) => {
-                return event.date < today;
-            }
-        } 
+        
         const smallestDateProject = project.events.filter(filterfunction).sort((a, b) => a.data - b.date)[0];
 
         if(smallestDateProject ) {
+            filteredProjects.push(project);
+        }        
+    })
+
+    let output = sortProjectsByDates(filteredProjects);
+
+    if(filter === 'past') output = output.reverse();
+
+    return output;
+}
+
+export function sortProjectsByDates(projects) {
+    const datePairs = [];
+    const sortedProjects = [];
+    projects.forEach(project => {
+        const smallestDateProject = project.events.sort((a, b) => a.data - b.date)[0];
+
+        if(smallestDateProject) {
             const smallestDate = smallestDateProject.date;
             datePairs[project.title] = smallestDate;
-            filteredProjects.push(project);
+            sortedProjects.push(project);
         }
-        
-    })
-    return filteredProjects.sort((a, b) => datePairs[a.title] - datePairs[b.title]);
+    });  
+    
+    return sortedProjects.sort((a, b) => datePairs[a.title] - datePairs[b.title]);
 }
 
 export function getEvents(projects) {

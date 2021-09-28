@@ -1,0 +1,7 @@
+.EventHolder {
+    border-top: var(--col_interaction) solid;
+    border-bottom: var(--col_interaction) solid;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
