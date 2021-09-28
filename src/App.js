@@ -37,7 +37,6 @@ function App() {
         isAdmin = admins.includes(user.uid);
         user.isAdmin = isAdmin;
         if(!isAdmin) {
-          LogOutFromGoogle();
           return null;
         }
       }  
