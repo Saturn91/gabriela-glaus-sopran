@@ -2,7 +2,7 @@
 //offical tutorial: https://firebase.google.com/docs/web/setup?authuser=0#config-object
 
 import * as firebase from "firebase/app"
-import { getFirestore, collection, getDocs, doc, updateDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc } from "firebase/firestore";
 import "firebase-auth";
 import "firebase/firestore";
 import { getStorage, getDownloadURL, ref, uploadString } from "firebase/storage";
@@ -44,13 +44,7 @@ export function getAllDocsFromCollection(collection_id) {
 }
 
 export function updateFireBaseDoc(collectionUrl, id, object) {
-    return new Promise((resolve, reject) => {
-        const docRef = doc(firebaseAppStore, collectionUrl, id);
-        return updateDoc(docRef, object).then(() => {
-            alert('updated database')
-            resolve();
-        })
-    }) 
+    return setDoc(doc(firebaseAppStore, collectionUrl, id), object);
 }
 
 export const firebaseFileStorage = getStorage();
@@ -85,6 +79,12 @@ export function postTextFileOnFireBase(path, text) {
         alert('storgae updated!');
       });
 
+}
+
+export function deleteOneDocFromFireStore(collection, docId) {
+    deleteDoc(doc(firebaseAppStore, collection, docId)).then(() => {
+        alert('event deleted!');
+    }) 
 }
 
 export { firebase };

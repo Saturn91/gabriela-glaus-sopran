@@ -1,4 +1,5 @@
-import { getAllDocsFromCollection } from "./firebase-connection.service";
+import { deleteOneDocFromFireStore, getAllDocsFromCollection, updateFireBaseDoc } from "./firebase-connection.service";
+
 
 export function getProjectsFromDB() {
     return new Promise(
@@ -18,14 +19,18 @@ export function getProjectsFromDB() {
                             ensemble: ensemble,
                             description: description,
                             info: link,
-                            events: events
+                            events: events,
+                            url: "Projects/"+project.id
                         }
                     )
-                    getAllDocsFromCollection("/Projects/"+project.id+"/Events").then((events) => {
+                    const eventUrl = "Projects/"+project.id+"/Events";
+                    getAllDocsFromCollection(eventUrl).then((events) => {
                         events.forEach((event, ev_index) => {
                             projectsCollection[proj_index].events.push({
                                 date: new Date(event.data.date.toDate()),
-                                location: event.data.location
+                                location: event.data.location,
+                                url: eventUrl,
+                                id: event.id
                             })
                             if(proj_index+1 === projects.length && ev_index+1 === events.length) resolve(projectsCollection);
                         })
@@ -117,4 +122,31 @@ export function getCurrentEvents(projects) {
 export function getPastEvents(projects) {
     const today = Date.now();
     return getEvents(projects).filter(event => event.date < today).reverse();
+}
+
+export function updateEvent(event, location, date) {
+    updateFireBaseDoc(event.url, event.id, {
+        location,
+        date
+    });
+}
+
+export function deleteEvent(event) {
+    deleteOneDocFromFireStore(event.url, event.id);
+}
+
+export function addEventToProject(project, event) {
+
+}
+
+export function addProject(project) {
+
+}
+
+export function updateProject(project) {
+
+}
+
+export function deleteProject(project) {
+
 }

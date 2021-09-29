@@ -17,7 +17,7 @@ import ContactComponent from './components/ContactComponent/ContactComponent';
 import FooterComponent from './components/FooterComponent/FooterComponent';
 import AdminLogin from './components/AdminLogin/AdminLogin';
 import { testConnection } from './services/firebase-connection.service';
-import { auth, LogOutFromGoogle } from './components/AdminLogin/LoggedInUserInfo/Login/Login.service';
+import { auth } from './components/AdminLogin/LoggedInUserInfo/Login/Login.service';
 
 function App() {
   testConnection((entries) => {
