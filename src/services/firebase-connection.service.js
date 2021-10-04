@@ -43,8 +43,9 @@ export function getAllDocsFromCollection(collection_id) {
     })    
 }
 
-export function updateFireBaseDoc(collectionUrl, id, object) {
-    return setDoc(doc(firebaseAppStore, collectionUrl, id), object);
+export function setFireBaseDoc(collectionUrl, id, object) {
+    const document = id ? doc(firebaseAppStore, collectionUrl, id) : doc(firebaseAppStore, collectionUrl);
+    return setDoc(document, object);
 }
 
 export const firebaseFileStorage = getStorage();
@@ -83,7 +84,7 @@ export function postTextFileOnFireBase(path, text) {
 
 export function deleteOneDocFromFireStore(collection, docId) {
     deleteDoc(doc(firebaseAppStore, collection, docId)).then(() => {
-        alert('event deleted!');
+        alert('document deleted!');
     }) 
 }
 

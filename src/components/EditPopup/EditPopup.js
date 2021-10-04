@@ -1,14 +1,11 @@
-import React from 'react';
+import PromptComponent from '../PromptComponent/PromptComponent';
 import styles from './EditPopup.module.css';
 
-const EditPopup = (props) => (
-  <div className={styles.EditPopup} data-testid="EditPopup">
+function EditPopup(props){
+  return <div className={styles.EditPopup} data-testid="EditPopup">
     {props.children}
+    <PromptComponent></PromptComponent>
   </div>
-);
-
-EditPopup.propTypes = {};
-
-EditPopup.defaultProps = {};
+}
 
 export default EditPopup;

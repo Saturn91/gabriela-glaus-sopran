@@ -1,4 +1,4 @@
-import { deleteOneDocFromFireStore, getAllDocsFromCollection, updateFireBaseDoc } from "./firebase-connection.service";
+import { deleteOneDocFromFireStore, getAllDocsFromCollection, setFireBaseDoc } from "./firebase-connection.service";
 
 
 export function getProjectsFromDB() {
@@ -125,7 +125,7 @@ export function getPastEvents(projects) {
 }
 
 export function updateEvent(event, location, date) {
-    updateFireBaseDoc(event.url, event.id, {
+    setFireBaseDoc(event.url, event.id, {
         location,
         date
     });
@@ -135,8 +135,11 @@ export function deleteEvent(event) {
     deleteOneDocFromFireStore(event.url, event.id);
 }
 
-export function addEventToProject(project, event) {
-
+export function addEventToProject(eventUrl, location, date) {
+    setFireBaseDoc(eventUrl, new Date().getTime().toString() + Math.random()*10000, {
+        location,
+        date
+    });
 }
 
 export function addProject(project) {

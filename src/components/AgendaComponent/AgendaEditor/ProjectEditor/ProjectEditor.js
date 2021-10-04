@@ -22,7 +22,7 @@ function ProjectEditor(props) {
         <div className={styles.lineProperty}>
           <label>Description:</label><textarea type='text' value={description} onChange={(event) => {setDescription(event.target.value)}}></textarea>
         </div>   
-        <EventsEditor events={props.project.events}></EventsEditor>     
+        <EventsEditor events={props.project.events} project={props.project}></EventsEditor>     
         <div className={styles.buttonHolder}> 
           <button type='button'>Save Changes</button>
           <button className={mainStyle.red} type='button'>Delete Project</button>

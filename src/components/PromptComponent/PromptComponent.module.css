@@ -1,0 +1,44 @@
+.PromptComponent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    display: none;
+    justify-content: center;
+    z-index: 4;
+}
+
+.PromptBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 20vh;
+    height: 500px;
+    min-width: 50vw;
+    max-width: 80%;
+    background-color: white;
+    color: black;
+    box-shadow: -5px 5px 5px rgba(0,0,0,0.3);
+    border-style: none solid none none;
+    border-width: 2px;
+    border-color: rgba(146, 146, 146, 0.466);
+}
+
+.Header {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.buttonHolder {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.buttonHolder button{
+    width: 100%;
+    border-radius: 0;
+    margin: 20px;
+}
